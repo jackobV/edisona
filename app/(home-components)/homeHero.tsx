@@ -132,7 +132,7 @@ export default function HomeHero() {
                             >
                                 Přihláška
                             </a>
-                            <a href="#" className="text-sm font-semibold leading-6 text-white px-3.5 py-2.5 rounded-md backdrop-blur-2xl">
+                            <a href="/vizeskoly" className="text-sm font-semibold leading-6 text-white px-3.5 py-2.5 rounded-md backdrop-blur-2xl">
                                 Vize školy <span aria-hidden="true">→</span>
                             </a>
                         </div>

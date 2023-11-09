@@ -31,7 +31,7 @@ export default function PrincipalCitation(){
                             </p>
                             <p className="font-bold pt-4">Mgr. Pavla Sadílková, MBA</p>
                             <p className="font-light text-sm py-2">Ředitelka a zakladatelka školy</p>
-                            <button className="bg-white w-fit text-black py-2 px-5 rounded-xl font-medium tracking-tight drop-shadow-md">Více o koncepci školy</button>
+                            <a href="/koncepce" className="w-fit bg-white w-fit text-black py-2 px-5 rounded-xl font-medium tracking-tight drop-shadow-md">Více o koncepci školy</a>
                         </div>
 
                     </div>

@@ -43,7 +43,7 @@ export default async function News(){
 
                 </div>
             </div>
-            <button className="bg-white rounded-2xl flex flex-col items-center justify-center mx-auto px-16 py-2 drop-shadow-md font-semibold md:bg-black md:text-white tracking-wide">Všechny články</button>
+            <a href="/novinky" className="w-fit bg-white rounded-2xl flex flex-col items-center justify-center mx-auto px-16 py-2 drop-shadow-md font-semibold md:bg-black md:text-white tracking-wide">Všechny články</a>
         </div>
         </div>
     )
