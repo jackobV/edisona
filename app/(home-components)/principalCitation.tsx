@@ -6,7 +6,7 @@ export default function PrincipalCitation(){
         <div className="mx-auto max-w-7xl px-6 lg:px-8 pb-2 ">
             <div className="flex flex-col bg-[#DB574E] drop-shadow-md rounded-xl py-10 px-5 md:hidden">
                 <div className="text-white font-light italic">
-                    <p>„Edisona je pro mě oč co nevidím pochodu chytrý. A hlav mě sám pes? Záměr k hejbaly přihrčela vypáčeno ex vmíchal od popravy vechtrovský rejpanec tos záhad tři ně rutinu role sůl ze za by vzdělaní nelže neb hokynářky kůží vrhl.“
+                    <p>“Učíme zážitkem a aktivně. Probouzíme a podporujeme v dětech zvědavost a vedeme je k odpovědnosti za své učení. Vedeme je k sobě samým. Učí se komunikovat, pracovat v týmu, debatovat a řešit konflikty.”
                     </p>
                 </div>
                 <div className="flex flex-row pt-8 gap-x-3">
@@ -27,7 +27,7 @@ export default function PrincipalCitation(){
                     <div className="flex flex-col w-2/3"></div>
                     <div className="flex flex-col w-full">
                         <div className="flex flex-col max-w-md">
-                            <p>„Edisona je pro mě oč co nevidím pochodu chytrý. A hlav mě sám pes? Záměr k hejbaly přihrčela vypáčeno ex vmíchal od popravy vechtrovský rejpanec tos záhad tři ně rutinu role sůl ze za by vzdělaní nelže neb hokynářky kůží vrhl.“
+                            <p>“Učíme zážitkem a aktivně. Probouzíme a podporujeme v dětech zvědavost a vedeme je k odpovědnosti za své učení. Vedeme je k sobě samým. Učí se komunikovat, pracovat v týmu, debatovat a řešit konflikty.”
                             </p>
                             <p className="font-bold pt-4">Mgr. Pavla Sadílková, MBA</p>
                             <p className="font-light text-sm py-2">Ředitelka a zakladatelka školy</p>

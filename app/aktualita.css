@@ -1,0 +1,31 @@
+.bodyArticle h1 {
+    padding-top: 0.75rem;
+
+    font-size:1.5rem;
+    font-weight: 500;
+    padding-bottom: 0.75rem;
+}
+.bodyArticle h2 {
+    padding-top: 0.5rem;
+
+    font-size:1.25rem;
+    font-weight: 500;
+    padding-bottom: 0.5rem;
+}
+.bodyArticle ul {
+    padding-top:0.25rem;
+    padding-bottom:0.25rem;
+    list-style: disc;
+    padding-left: 2rem;
+ }
+.bodyArticle ol {
+    padding-top:0.25rem;
+    padding-bottom:0.25rem;
+    list-style: decimal;
+    padding-left: 2rem;
+}
+.bodyArticle p {
+    padding-top:0.25rem;
+    padding-bottom:0.25rem;
+    line-height: 1.625;
+}

@@ -7,16 +7,15 @@ import picture from "../(home-media)/Placeholder.png"
 import EdisonaLogoWhite from"../(home-media)/edisonaLogoWhite.png"
 
 const navigation = [
-    { name: 'Úvod', href: '#' },
-    { name: 'O škole', href: '#' },
-    { name: 'Kroužky a aktivity', href: '#' },
-    { name: 'Družina a jídelna', href: '#' },
+    { name: 'Úvod', href: '/' },
+    { name: 'O škole', href: '/vizeskoly' },
+    { name: 'Průvodci a tým', href: '/pruvodciatym' },
 
 ]
 const navigationRight = [
     { name: 'Přihláška', href: '#' },
-    { name: 'Novinky', href: '#' },
-    { name: 'Kontakt', href: '#' },
+    { name: 'Novinky', href: '/novinky' },
+    { name: 'Kontakt', href: '/pruvodciatym' },
 ]
 export default function HomeHero() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -115,17 +114,16 @@ export default function HomeHero() {
                 </div>
                 <div className="mx-auto max-w-5xl ">
                     <div className="w-20 h-20 mx-auto hidden lg:flex">
-                        <Image src={EdisonaLogoWhite} alt={"Edisona Logo"}  className="object-contain"/>
+                        <a className="" href="/">
+                            <Image src={EdisonaLogoWhite} alt={"Edisona Logo"}  className="object-contain"/>
+                        </a>
                     </div>
                     <div className="text-center py-32 xl:py-48 2xl:py-56">
                         <h1 className=" text-2xl md:text-4xl font-bold tracking-tight text-white">
-                            Jsme Edisona, škola kde děti poznávají svět i samy sebe.
+                            Škola, kde děti poznávají svět i samy sebe.
                         </h1>
                         <p className="mt-6 text-lg leading-8 text-gray-300 max-w-2xl mx-auto">
-                            Škola je založena na konceptu EDIKA, který se přímo zaměřuje na podporu
-                            a rozvoj sebevyjádření, sebeuvědomění, poznávání světa a sebe sama,
-                            rozvíjení tvořivosti a komunikace na všech úrovních.
-
+                            Jsme inovativní škola zaměřená na smysluplné vzdělávání. Klademe důraz na rozvoj celé osobnosti, schopnost sebeuvědomění a sebevyjádření, umění tvořivosti a komunikace na všech úrovních. K nám i rodiče chodí rádi.
                         </p>
                         <div className="mt-10 flex items-center justify-center gap-x-6">
                             <a
