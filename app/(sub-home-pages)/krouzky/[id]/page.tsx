@@ -5,7 +5,9 @@ import SubHomeMenu from "@/app/(sub-home-pages)/(sub-home-components)/subHomeMen
 import DisplayTextAktualita from "@/app/(sub-home-pages)/novinky/[id]/(novinka-id-components)/displayTextAktualita";
 import ImageArray from "@/app/(sub-home-pages)/novinky/[id]/(novinka-id-components)/imageArray";
 import HomeFooter from "@/app/(home-components)/homeFooter";
-interface Aktualita {
+import HeaderKrouzek from "@/app/(sub-home-pages)/krouzky/[id]/(krouzky-id-components)/headerKrouzek";
+import DisplayTextKrouzek from "@/app/(sub-home-pages)/krouzky/[id]/(krouzky-id-components)/displayTextKrouzek";
+interface Krouzek {
     id:string;
     title:string;
     datum:string;
@@ -20,7 +22,7 @@ export async function generateMetadata({params}: { params: {id:string} }) {
 
     // fetch data
     const pb = new PocketBase('https://pocketbase-production-ab0e.up.railway.app');
-    const record = await pb.collection('aktuality').getOne(params.id, {
+    const record = await pb.collection('krouzky').getOne(params.id, {
     });
     // return a dynamic title
     return {
@@ -31,7 +33,7 @@ export async function generateMetadata({params}: { params: {id:string} }) {
 
 export default async function Page({params}: { params: {id:string} }){
     const pb = new PocketBase('https://pocketbase-production-ab0e.up.railway.app');
-    const record = await pb.collection('aktuality').getOne(params.id, {
+    const record = await pb.collection('krouzky').getOne(params.id, {
     });
     function formatDate(inputString: string | number | Date) {
         const date = new Date(inputString);
@@ -41,7 +43,7 @@ export default async function Page({params}: { params: {id:string} }){
 
         return `${day}.${month}.${year}`;
     }
-    const aktualita:Aktualita = {
+    const krouzek:Krouzek = {
         id:params.id,
         title:record.title,
         datum:formatDate(record.datum),
@@ -58,13 +60,13 @@ export default async function Page({params}: { params: {id:string} }){
                 </div>
             </section>
             <section className="pt-20">
-                <NovinkaHeader title={aktualita.title} previewImage={aktualita.previewImage} datum={aktualita.datum} id={aktualita.id} />
+                <HeaderKrouzek title={krouzek.title} previewImage={krouzek.previewImage} datum={krouzek.datum} id={krouzek.id} />
             </section>
             <section className="pt-10 mx-auto max-w-4xl px-6 lg:px-8">
-                <DisplayTextAktualita text={aktualita.text} />
+                <DisplayTextKrouzek text={krouzek.text} />
             </section>
             <section className="pt-10 pb-16 mx-auto max-w-4xl px-6 lg:px-8">
-                <ImageArray apiFileDirId={"xyozhjstnob0eer"} id={params.id} imageArray={aktualita.imageArray} />
+                <ImageArray apiFileDirId={"mz2k9c7rmd5db1b"} id={params.id} imageArray={krouzek.imageArray} />
             </section>
             <section className="">
                 <HomeFooter />

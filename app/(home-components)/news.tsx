@@ -29,17 +29,17 @@ export default async function News(){
             <NejaktualnejsiSpravyBanner />
             <div className="flex flex-row gap-x-10 pt-16 pb-14">
                 <div className="mx-auto">
-                        <Aktualita title={aktuality[0].title} description={aktuality[0].description} thumbnail={aktuality[0].thumbnail}  />
+                        <Aktualita id={aktuality[0].id} title={aktuality[0].title} description={aktuality[0].description} thumbnail={aktuality[0].thumbnail}  />
                 </div>
                 <div className="hidden sm:inline">
-                        <Aktualita title={aktuality[1].title} description={aktuality[1].description} thumbnail={aktuality[1].thumbnail}  />
+                        <Aktualita id={aktuality[1].id} title={aktuality[1].title} description={aktuality[1].description} thumbnail={aktuality[1].thumbnail}  />
                 </div>
                 <div className="hidden md:inline">
-                        <Aktualita title={aktuality[2].title} description={aktuality[2].description} thumbnail={aktuality[2].thumbnail}  />
+                        <Aktualita id={aktuality[2].id} title={aktuality[2].title} description={aktuality[2].description} thumbnail={aktuality[2].thumbnail}  />
 
                 </div>
                 <div className="hidden lg:inline">
-                        <Aktualita title={aktuality[3].title} description={aktuality[3].description} thumbnail={aktuality[3].thumbnail}  />
+                        <Aktualita  id={aktuality[3].id} title={aktuality[3].title} description={aktuality[3].description} thumbnail={aktuality[3].thumbnail}  />
 
                 </div>
             </div>
