@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import picture from "../(home-media)/Placeholder.png"
+import picture from "../(home-media)/na-zkousku-picture-2.jpg"
 import EdisonaLogoWhite from"../(home-media)/edisonaLogoWhite.png"
 
 const navigation = [
@@ -95,10 +95,13 @@ export default function HomeHero() {
             </header>
 
             <div className="relative isolate overflow-hidden pt-14 rounded-b-2xl">
+                <div className="absolute inset-0 -z-20 h-full w-full bg-black">
+
+                </div>
                 <Image
                     src={picture}
                     alt=""
-                    className="absolute inset-0 -z-10 h-full w-full object-cover"
+                    className="absolute inset-0 -z-10 h-full w-full object-cover opacity-60"
                 />
                 <div
                     className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"

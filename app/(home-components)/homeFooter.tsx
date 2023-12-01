@@ -16,7 +16,7 @@ export default function HomeFooter(){
                         <a className="underline pt-5">Náš Facebook</a>
                     </div>
                     <div className="flex flex-col pt-5 md:pt-0">
-                        <a className="underline">Dokumenty předpisy a GDPR</a>
+                        <a className="underline" href="/urednideska">Úřední deska</a>
                         <a className="underline pt-1">Organizace školního roku</a>
                         <a className="underline pt-1">Školská rada</a>
                     </div>

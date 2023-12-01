@@ -3,6 +3,7 @@ interface document{
     title:string
     url:string
 }
+export const revalidate = "3000"
 export default async function Dokumentykestazenilist(){
     const pb = new PocketBase('https://pocketbase-production-ab0e.up.railway.app');
     const resultAwaitDocuments = await pb.collection("dokumenty").getFullList()

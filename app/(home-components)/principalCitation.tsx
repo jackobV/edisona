@@ -14,7 +14,7 @@ export default function PrincipalCitation(){
                         <Image src={PavlaSadilkova} alt={"Pavla Sadílková"} />
                     </div>
                     <div className="text-white flex flex-col gap-y-1">
-                        <p className="font-bold ">Mgr. Pavla Sadílková, MBA</p>
+                        <p className="font-bold ">Mgr. Pavla Sadilová, MBA</p>
                         <p className="font-light text-sm">Ředitelka a zakladatelka<br /> školy</p>
                     </div>
                 </div>
@@ -29,7 +29,7 @@ export default function PrincipalCitation(){
                         <div className="flex flex-col max-w-md">
                             <p>“Učíme zážitkem a aktivně. Probouzíme a podporujeme v dětech zvědavost a vedeme je k odpovědnosti za své učení. Vedeme je k sobě samým. Učí se komunikovat, pracovat v týmu, debatovat a řešit konflikty.”
                             </p>
-                            <p className="font-bold pt-4">Mgr. Pavla Sadílková, MBA</p>
+                            <p className="font-bold pt-4">Mgr. Pavla Sadilová, MBA</p>
                             <p className="font-light text-sm py-2">Ředitelka a zakladatelka školy</p>
                             <a href="/koncepce" className="w-fit bg-white w-fit text-black py-2 px-5 rounded-xl font-medium tracking-tight drop-shadow-md">Více o koncepci školy</a>
                         </div>

@@ -13,7 +13,10 @@
   ```
 */
 import Image from "next/image";
-import duveraImage from "../(sub-home-media)/duverafeature.png"
+import duveraImage from "../vizeskoly/(vize-skoly-media)/DSC_6118.jpg"
+import svobodaImage from "../vizeskoly/(vize-skoly-media)/DSC_6099.jpg"
+import smysluplnostImage from "../vizeskoly/(vize-skoly-media)/DSC_6286.jpg"
+
 import feature2foto from "../(sub-home-media)/feature2foto.png"
 import feature3foto from "../(sub-home-media)/feature3foto.png"
 const features = [
@@ -28,14 +31,14 @@ const features = [
         name: 'Svoboda a odpovědnost',
         description:
             'Vedeme žáky k uvědomění provázanosti mezi svobodou a odpovědností, postupně je učíme dělat svobodná rozhodnutí a nést následky.',
-        imageSrc: feature2foto,
+        imageSrc: svobodaImage,
         imageAlt: 'foto 2.',
     },
     {
         name: 'Smysluplnost učení',
         description:
             'Žáci poznávají svět v souvislostech. Vycházíme z jejich vnitřního zájmu a zprostředkovanou zkušeností rozvíjíme dovednosti potřebné pro život v moderní společnosti.',
-        imageSrc: feature3foto,
+        imageSrc: smysluplnostImage,
         imageAlt: 'foto 3.',
     },
 ]

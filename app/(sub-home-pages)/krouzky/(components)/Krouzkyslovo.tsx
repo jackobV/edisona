@@ -11,11 +11,12 @@ export default function Krouzkyslovo(){
                 </div>
                 <div className="flex flex-row pt-8 gap-x-3">
                     <div className="w-20 h-20 flex flex-col shrink-0 drop-shadow-md">
-                        <Image src={krouzkyslovo} alt={"Pavla Sadílková"} />
+                        <Image src={krouzkyslovo} alt={"Mgr. Denisa Sládečková (Tichavová)"} className="rounded-full overflow-hidden h-20 w-20" />
                     </div>
                     <div className="text-white flex flex-col gap-y-1">
-                        <p className="font-bold ">Mgr. Pavla Sadílková, MBA</p>
-                        <p className="font-light text-sm">Ředitelka a zakladatelka<br /> školy</p>
+                        <p className="font-bold ">Mgr. Denisa Sládečková (Tichavová)
+                        </p>
+                        <p className="font-light text-sm">Průvodkyně II. trojročí, výchovná poradkyně </p>
                     </div>
                 </div>
             </div>
@@ -24,13 +25,12 @@ export default function Krouzkyslovo(){
                     <Image src={krouzkyslovo} alt={"PavlaTestimonial"} className="w-full h-full object-cover" />
                 </div>
                 <div className="flex flex-row">
-                    <div className="flex flex-col w-2/3"></div>
-                    <div className="flex flex-col w-full">
+                    <div className="flex flex-col w-full pl-10">
                         <div className="flex flex-col max-w-md">
                             <p>“Učíme zážitkem a aktivně. Probouzíme a podporujeme v dětech zvědavost a vedeme je k odpovědnosti za své učení. Vedeme je k sobě samým. Učí se komunikovat, pracovat v týmu, debatovat a řešit konflikty.”
                             </p>
-                            <p className="font-bold pt-4">Mgr. Pavla Sadílková, MBA</p>
-                            <p className="font-light text-sm py-2">Ředitelka a zakladatelka školy</p>
+                            <p className="font-bold pt-4">Mgr. Denisa Sládečková (Tichavová)</p>
+                            <p className="font-light text-sm py-2">Průvodkyně II. trojročí, výchovná poradkyně</p>
                             <a href="/koncepce" className="w-fit bg-white w-fit text-black py-2 px-5 rounded-xl font-medium tracking-tight drop-shadow-md">Více o koncepci školy</a>
                         </div>
 

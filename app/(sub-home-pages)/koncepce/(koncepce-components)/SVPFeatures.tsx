@@ -70,7 +70,7 @@ export default function SVPFeatures() {
                     ))}
                 </div>
                 <div className="flex flex-col w-full items-center pt-20">
-                    <button className="py-2 px-5 bg-black text-white drop-shadow-md rounded-md ">stáhnout ŠVP</button>
+                    <a href="https://pocketbase-production-ab0e.up.railway.app/api/files/xp1gvxt7pluknme/5t14y5bjlb1qvje/s_vp_zs_edisona_2023_QtQA0Y8Syd.pdf?token=" className="py-2 px-5 bg-black text-white drop-shadow-md rounded-md ">stáhnout ŠVP</a>
                 </div>
             </div>
     )

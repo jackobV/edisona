@@ -31,6 +31,8 @@ import TemplateBg2 from "@/app/(general-media)/(shapes)/templateBg2";
 import RLL from "@/app/(general-media)/(shapes)/(rectangle)/(large)/RLL";
 import RLL3 from "@/app/(general-media)/(shapes)/(rectangle)/(large)/RLL3";
 import Testimonials from "@/app/(home-components)/testimonials";
+import SlovoPruvodce from "@/app/(sub-home-pages)/koncepce/(koncepce-components)/SlovoPruvodce";
+import Krouzkyslovo from "@/app/(sub-home-pages)/krouzky/(components)/Krouzkyslovo";
 
 // either Static metadata
 export const metadata: Metadata = {
@@ -61,7 +63,7 @@ export default function Home(){
                     <UvodniSlovoKoncepce />
                 </section>
                 <section className=" pt-16">
-                    <KoncepceTestimonialSlovo />
+                    <Krouzkyslovo />
                 </section>
                 <section className=" pt-16">
                     <SVP />
