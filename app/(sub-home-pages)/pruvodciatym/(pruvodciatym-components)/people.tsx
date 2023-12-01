@@ -1,7 +1,7 @@
 "use client"
 import PocketBase from "pocketbase";
 import { Fragment, useState } from 'react'
-import { Listbox, Transition } from '@headlessui/react'
+import {Dialog, Listbox, Transition} from '@headlessui/react'
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
 import {PeopleParams, Person} from "@/app/(sub-home-pages)/pruvodciatym/page";
 
@@ -15,46 +15,92 @@ export default function People({people}:{people:PeopleParams}) {
         {id:2,title:"Průvodci",unavailable:false},
         {id:3,title:"Učitelé jazyků",unavailable:false},
         {id:4,title:"Školní družina",unavailable:false},
+        {id:5,title:"Kroužky",unavailable:false},
+        {id:6,title:"Provozní tým",unavailable:false},
 
     ]
+    const [open,setOpen] = useState(false)
+    const [selectedPerson,setSelectedPerson] = useState<Person|undefined>(undefined)
     const [selectedOption,setSelectedOption] = useState(options[0])
     const Zakladatele = people.people
-        .filter((item:Person) => item.role === "Zakladatel_vedeni")
+        .filter((item:Person) => item.role.includes("Zakladatel_vedeni"))
         .map((item:Person) => ({
             name: item.name,
             surname: item.surname,
             title: item.title,
             role: item.role,
             picture: item.picture,
+            medailon:item.medailon,
+            roleDisplay:item.roleDisplay,
+            email:item.email,
+
         }));
     const Pruvodci = people.people
-        .filter((item:Person) => item.role === "Pruvodce")
+        .filter((item:Person) => item.role.includes("Pruvodce") )
         .map((item:Person) => ({
             name: item.name,
             surname: item.surname,
             title: item.title,
             role: item.role,
             picture: item.picture,
+            medailon:item.medailon,
+            email:item.email,
+            roleDisplay:item.roleDisplay
         }));
     const UciteleJazyku = people.people
-        .filter((item:Person) => item.role === "Ucitel_jazyku")
+        .filter((item:Person) => item.role.includes("Ucitel_jazyku"))
         .map((item:Person) => ({
             name: item.name,
             surname: item.surname,
             title: item.title,
             role: item.role,
             picture: item.picture,
+            medailon:item.medailon,
+            email:item.email,
+
+            roleDisplay:item.roleDisplay
         }));
     const SkolniDruzina = people.people
-        .filter((item:Person) => item.role === "Skolni_druzina")
+        .filter((item:Person) => item.role.includes("Skolni_druzina"))
         .map((item:Person) => ({
             name: item.name,
             surname: item.surname,
             title: item.title,
             role: item.role,
             picture: item.picture,
+            medailon:item.medailon,
+            email:item.email,
+            roleDisplay:item.roleDisplay
+        }));
+    const Krouzky = people.people
+        .filter((item:Person) => item.role.includes("Krouzky"))
+        .map((item:Person) => ({
+            name: item.name,
+            surname: item.surname,
+            title: item.title,
+            role: item.role,
+            picture: item.picture,
+            medailon:item.medailon,
+            email:item.email,
+            roleDisplay:item.roleDisplay
+        }));
+    const Provoznitym = people.people
+        .filter((item:Person) => item.role.includes("Provozni_tym"))
+        .map((item:Person) => ({
+            name: item.name,
+            surname: item.surname,
+            title: item.title,
+            role: item.role,
+            picture: item.picture,
+            medailon:item.medailon,
+            email:item.email,
+            roleDisplay:item.roleDisplay
         }));
     console.log(SkolniDruzina)
+    const selectPerson = (person:Person) => {
+        setSelectedPerson(person);
+        setOpen(true)
+    }
     return (
         <div className="">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -130,49 +176,151 @@ export default function People({people}:{people:PeopleParams}) {
                 >
                     {
                         selectedOption.id === 0 ?
-                            people.people.map((person:Person) => (
-                        <li key={person.name}>
-                            <img className="mx-auto h-24 w-24 rounded-full" src={person.picture} alt="" />
+                            people.people.map((person:Person,key) => (
+                        <li key={key}>
+                            <button onClick={()=>selectPerson(person)}>
+                                <img className="mx-auto h-24 w-24 rounded-full" src={person.picture} alt="" />
+                            </button>
                             <h3 className="mt-6 text-base font-semibold leading-7 tracking-tight text-gray-900">{person.name} {person.surname}</h3>
-                            <p className="text-sm leading-6 text-gray-600">{person.role}</p>
+                            <p className="text-sm leading-6 text-gray-600">{person.roleDisplay}</p>
                         </li>
                     ))
                             : selectedOption.id === 1 ?
-                                Zakladatele.map((person:Person) => (
-                                    <li key={person.name}>
-                                        <img className="mx-auto h-24 w-24 rounded-full" src={person.picture} alt="" />
+                                Zakladatele.map((person:Person,key) => (
+                                    <li key={key}>
+                                        <button onClick={()=>selectPerson(person)}>
+                                            <img className="mx-auto h-24 w-24 rounded-full" src={person.picture} alt="" />
+                                        </button>
                                         <h3 className="mt-6 text-base font-semibold leading-7 tracking-tight text-gray-900">{person.name} {person.surname}</h3>
-                                        <p className="text-sm leading-6 text-gray-600">{person.role}</p>
+                                        <p className="text-sm leading-6 text-gray-600">{person.roleDisplay}</p>
                                     </li>
                                 ))
                     : selectedOption.id === 2 ?
-                                Pruvodci.map((person:Person) => (
-                                    <li key={person.name}>
-                                        <img className="mx-auto h-24 w-24 rounded-full" src={person.picture} alt="" />
+                                Pruvodci.map((person:Person,key) => (
+                                    <li key={key}>
+                                        <button onClick={()=>selectPerson(person)}>
+                                            <img className="mx-auto h-24 w-24 rounded-full" src={person.picture} alt="" />
+                                        </button>
                                         <h3 className="mt-6 text-base font-semibold leading-7 tracking-tight text-gray-900">{person.name} {person.surname}</h3>
-                                        <p className="text-sm leading-6 text-gray-600">{person.role}</p>
+                                        <p className="text-sm leading-6 text-gray-600">{person.roleDisplay}</p>
                                     </li>
                                 ))
                             : selectedOption.id === 3 ?
-                                    UciteleJazyku.map((person:Person) => (
-                                        <li key={person.name}>
-                                            <img className="mx-auto h-24 w-24 rounded-full" src={person.picture} alt="" />
+                                    UciteleJazyku.map((person:Person,key) => (
+                                        <li key={key}>
+                                            <button onClick={()=>selectPerson(person)}>
+                                                <img className="mx-auto h-24 w-24 rounded-full" src={person.picture} alt="" />
+                                            </button>
                                             <h3 className="mt-6 text-base font-semibold leading-7 tracking-tight text-gray-900">{person.name} {person.surname}</h3>
-                                            <p className="text-sm leading-6 text-gray-600">{person.role}</p>
+                                            <p className="text-sm leading-6 text-gray-600">{person.roleDisplay}</p>
                                         </li>
                                     ))
                                 : selectedOption.id === 4 ?
-                                        SkolniDruzina.map((person:Person) => (
-                                            <li key={person.name}>
-                                                <img className="mx-auto h-24 w-24 rounded-full" src={person.picture} alt="" />
+                                        SkolniDruzina.map((person:Person,key) => (
+                                            <li key={key}>
+                                                <button onClick={()=>selectPerson(person)}>
+                                                    <img className="mx-auto h-24 w-24 rounded-full" src={person.picture} alt="" />
+                                                </button>
                                                 <h3 className="mt-6 text-base font-semibold leading-7 tracking-tight text-gray-900">{person.name} {person.surname}</h3>
-                                                <p className="text-sm leading-6 text-gray-600">{person.role}</p>
+                                                <p className="text-sm leading-6 text-gray-600">{person.roleDisplay}</p>
                                             </li>
-                                        ))
+                                        )):selectedOption.id === 5 ?
+                                                Krouzky.map((person:Person,key) => (
+                                                    <li key={key}>
+                                                        <button onClick={()=>selectPerson(person)}>
+                                                            <img className="mx-auto h-24 w-24 rounded-full" src={person.picture} alt="" />
+                                                        </button>
+                                                        <h3 className="mt-6 text-base font-semibold leading-7 tracking-tight text-gray-900">{person.name} {person.surname}</h3>
+                                                        <p className="text-sm leading-6 text-gray-600">{person.roleDisplay}</p>
+                                                    </li>
+                                                )):selectedOption.id === 6 ?
+                                                    Provoznitym.map((person:Person,key) => (
+                                                        <li key={key}>
+                                                            <button onClick={()=>selectPerson(person)}>
+                                                                <img className="mx-auto h-24 w-24 rounded-full" src={person.picture} alt="" />
+                                                            </button>
+                                                            <h3 className="mt-6 text-base font-semibold leading-7 tracking-tight text-gray-900">{person.name} {person.surname}</h3>
+                                                            <p className="text-sm leading-6 text-gray-600">{person.roleDisplay}</p>
+                                                        </li>
+                                                    ))
                                         :
                                         <div></div>
                     }
                 </ul>
+                <Transition.Root show={open} as={Fragment}>
+                    <Dialog as="div" className="relative z-10" onClose={setOpen}>
+                        <Transition.Child
+                            as={Fragment}
+                            enter="ease-out duration-300"
+                            enterFrom="opacity-0"
+                            enterTo="opacity-100"
+                            leave="ease-in duration-200"
+                            leaveFrom="opacity-100"
+                            leaveTo="opacity-0"
+                        >
+                            <div className="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" />
+                        </Transition.Child>
+
+                        <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
+                            <div className="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
+                                <Transition.Child
+                                    as={Fragment}
+                                    enter="ease-out duration-300"
+                                    enterFrom="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                                    enterTo="opacity-100 translate-y-0 sm:scale-100"
+                                    leave="ease-in duration-200"
+                                    leaveFrom="opacity-100 translate-y-0 sm:scale-100"
+                                    leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
+                                >
+                                    <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-sm sm:p-6">
+                                        <div>
+                                            <div className="mx-auto flex  items-center justify-center rounded-full ">
+                                                <img className="mx-auto h-24 w-24 rounded-full object-cover overflow-hidden" src={selectedPerson?.picture} alt="" />
+                                            </div>
+                                            <div className="mt-3 text-center sm:mt-5">
+                                                <Dialog.Title as="h3" className="text-base font-semibold leading-6 text-gray-900">
+                                                    <div className="flex flex-row gap-x-1 justify-center">
+                                                        <p>
+                                                            {selectedPerson?.name}
+                                                        </p>
+                                                        <p>
+                                                            {selectedPerson?.surname}
+                                                        </p>
+                                                    </div>
+                                                </Dialog.Title>
+                                                <div className="mt-2">
+                                                    <p className="text-sm text-gray-500">
+                                                        {selectedPerson?.roleDisplay}
+                                                    </p>
+                                                </div>
+                                                <div className="mt-2">
+                                                    <p className="text-sm text-gray-500">
+                                                        {selectedPerson?.medailon}
+                                                    </p>
+                                                </div>
+                                                <div className="mt-2">
+                                                    <p className="text-sm text-gray-500">
+                                                        {selectedPerson?.email}
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="mt-5 sm:mt-6">
+                                            <button
+                                                type="button"
+                                                className="inline-flex w-full justify-center rounded-md bg-orange-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-orange-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                                                onClick={() => setOpen(false)}
+                                            >
+                                                Zpět
+                                            </button>
+                                        </div>
+                                    </Dialog.Panel>
+                                </Transition.Child>
+                            </div>
+                        </div>
+                    </Dialog>
+                </Transition.Root>
+
             </div>
         </div>
     )

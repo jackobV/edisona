@@ -42,6 +42,7 @@ import RLS from "@/app/(general-media)/(shapes)/(rectangle)/(mobile)/RLS";
 import PLS from "@/app/(general-media)/(shapes)/(pollygon)/(mobile)/PLS";
 import RRS from "@/app/(general-media)/(shapes)/(rectangle)/(mobile)/RRS";
 import TemplateBg1 from "@/app/(general-media)/(shapes)/templateBg1";
+import Testimonials from "@/app/(home-components)/testimonials";
 // either Static metadata
 export const metadata: Metadata = {
     title: 'Spolupráce s rodiči - Edisona.cz',
@@ -84,7 +85,7 @@ export default function Spolupracesrodici(){
             </section>
 
             <section className="py-16">
-                <RodiceTestimonials />
+                <Testimonials />
             </section>
             <section className="bg-[#F4F4F4] rounded-t-2xl drop-shadow-md">
                 <section className="absolute w-full h-full flex flex-col gap-y-40 overflow-hidden md:flex hidden">

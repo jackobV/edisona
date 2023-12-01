@@ -21,7 +21,11 @@ export default function NovinkyFullArticles(){
     async function fetchData() {
         try {
             setLoading(true)
-            const response = await pb.collection("aktuality").getList(page,8)
+            const response = await pb.collection("aktuality").getList(page,8,{
+                sort: "-datum",
+                keepalive: false,
+                cache:     'no-store',
+            })
             const returnedData:Array<aktualita> = response.items.map((record:any) =>({
                 title:record.title,
                 description:record.preview_text,

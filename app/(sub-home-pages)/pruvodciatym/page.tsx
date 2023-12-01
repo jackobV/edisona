@@ -26,8 +26,11 @@ export interface Person {
     name:string;
     surname:string;
     title:string;
-    role:string;
+    role:Array<string>;
     picture:string;
+    medailon:string;
+    roleDisplay:string;
+    email:string;
 }
 export interface PeopleParams {
     people:Person[];
@@ -35,7 +38,7 @@ export interface PeopleParams {
 export default async function PruvodciATymPage(){
     const pb = new PocketBase('https://pocketbase-production-ab0e.up.railway.app');
     const records = await pb.collection('personal').getFullList({
-        sort: '-created',
+        sort: 'Jmeno',
     });
     const people: PeopleParams = {
         people: records.map(item => ({
@@ -44,6 +47,9 @@ export default async function PruvodciATymPage(){
             title: item.Titul,
             role: item.Role,
             picture: `https://pocketbase-production-ab0e.up.railway.app/api/files/ud6h7cjexscwd4z/${item.id}/${item.fotka}`,
+            medailon:item.Medailon,
+            roleDisplay:item.Role_display,
+            email:item.email,
         }))
     };
     return(

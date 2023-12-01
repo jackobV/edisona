@@ -13,7 +13,7 @@ const navigation = [
 
 ]
 const navigationRight = [
-    { name: 'Přihláška', href: '#' },
+    { name: 'kroužky', href: '/krouzky' },
     { name: 'Novinky', href: '/novinky' },
     { name: 'Kontakt', href: '/pruvodciatym' },
 ]

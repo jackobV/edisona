@@ -30,6 +30,7 @@ import TemplateBg1 from "@/app/(general-media)/(shapes)/templateBg1";
 import TemplateBg2 from "@/app/(general-media)/(shapes)/templateBg2";
 import RLL from "@/app/(general-media)/(shapes)/(rectangle)/(large)/RLL";
 import RLL3 from "@/app/(general-media)/(shapes)/(rectangle)/(large)/RLL3";
+import Testimonials from "@/app/(home-components)/testimonials";
 
 // either Static metadata
 export const metadata: Metadata = {
@@ -71,7 +72,7 @@ export default function Home(){
             </section>
 
             <section className="py-16">
-                <RodiceTestimonials />
+                <Testimonials />
             </section>
             <section className="bg-[#F4F4F4] py-16">
                 <PrihlaskaCTA />

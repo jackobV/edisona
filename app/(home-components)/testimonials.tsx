@@ -2,22 +2,38 @@
 import Image from "next/image";
 import useEmblaCarousel from 'embla-carousel-react'
 import RodiceOSkole from "../(home-media)/rodiceOSkole.png"
-import {useCallback, useEffect} from "react";
+import {useCallback, useEffect, useState} from "react";
+export interface testimonialsText{
+    testimonials:Array<string>;
+}
 export default function Testimonials(){
     const [emblaRef, emblaApi] = useEmblaCarousel()
     const [emblaRef2, emblaApi2] = useEmblaCarousel()
-
+    const [activeVal,setActiveVal] = useState(0);
     useEffect(()=>{
         if(emblaApi){
-            console.log(emblaApi.slideNodes())
+            console.log(activeVal)
+
         }
     },[emblaApi])
     const scrollNext = useCallback(
-        ()=> emblaApi && emblaApi.scrollNext(),
+        ()=> {
+            if(emblaApi){
+                emblaApi.scrollNext()
+                const newActive = activeVal +1
+                setActiveVal((prevVal) => prevVal + 1)
+            }
+        },
         [emblaApi]
     )
     const scrollPrev = useCallback(
-        ()=> emblaApi && emblaApi.scrollPrev(),
+        ()=> {
+            if(emblaApi){
+                emblaApi.scrollPrev()
+                const newActive = activeVal -1
+                setActiveVal(newActive)
+            }
+        },
         [emblaApi]
     )
     useEffect(()=>{
@@ -33,6 +49,7 @@ export default function Testimonials(){
         ()=> emblaApi && emblaApi2?.scrollPrev(),
         [emblaApi2]
     )
+
     return(
         <div className="mx-auto max-w-7xl px-6 lg:px-8 pt-4 pb-2">
             <div className="flex flex-col bg-white rounded-xl overflow-hidden drop-shadow-md md:hidden" >
@@ -45,45 +62,77 @@ export default function Testimonials(){
                 <div className="overflow-hidden z-10" ref={emblaRef2}>
                     <div className="flex">
                         <div className="flex-[0_0_100%] min-w-0">
-                            <div className="flex flex-row items-center gap-x-4 px-2 pt-5 pb-8">
+                            <div className="flex flex-row items-center h-full gap-x-4 px-2 pt-5 pb-8">
                                 <button className="w-6 h-6 bg-gray-50 drop-shadow-md rounded-full flex flex-col items-center text-center justify-center shrink-0" onClick={scrollPrev2}>{"<"}</button>
-                                <div className="flex flex-col">
-                                    <p className="text-sm font-thin text-gray-800 italic">
-                                        "Kruasdfci hraje svém civilního má naskytne zpívat ji od kope sta u
-                                        mi cosi oč ah zub zloba pomstít. Jím bok si, udal, dojde pomenší phlox otevřte sedmého mě noční oceán, tajil osmý
-                                        schopen vobleky.“
+                                <div className="flex flex-col h-full">
+                                    <p className="text-sm font-thin text-gray-800 italic justify-between">
+                                        Jsme moc rádi, že našim dětem můžeme nabídnout školu, kde je vedou k sebevědomí a jistotě i k tomu, že vyjádřit své názory a pocity je úplně v pořádku. Sice se to v dnešní společnosti hodně posouvá, není to ovšem ještě na mnoha školách pravidlem. Velice si vážíme přirozeného způsobu komunikace jak s dětmi, tak s rodiči. Ukazovat dětem, že vše je řešitelné, je pro nás mnohem důležitější než cpát do nich mraky informací.
                                     </p>
-                                    <p className="font-bold text-sm pt-2">Petr, táta Julie ze 4. ročníku</p>
+                                    <p className="font-bold text-sm pt-2">Rodič žáka Edisona</p>
                                 </div>
                                 <button className="w-6 h-6 bg-gray-50 drop-shadow-md rounded-full flex flex-col items-center text-center justify-center shrink-0" onClick={scrollNext2}>{">"}</button>
                             </div>
                         </div>
                         <div className="flex-[0_0_100%] min-w-0">
-                            <div className="flex flex-row items-center gap-x-4 px-2 pt-5 pb-8">
+                            <div className="flex flex-row items-center gap-x-4 px-2 pt-5 pb-8 h-full">
                                 <button className="w-6 h-6 bg-gray-50 drop-shadow-md rounded-full flex flex-col items-center text-center justify-center shrink-0" onClick={scrollPrev2}>{"<"}</button>
-                                <div className="flex flex-col">
+                                <div className="flex flex-col h-full justify-between">
                                     <p className="text-sm font-thin text-gray-800 italic">
-                                        "Kruasdfci hraje svém civilního má naskytne zpívat ji od kope sta u
-                                        mi cosi oč ah zub zloba pomstít. Jím bok si, udal, dojde pomenší phlox otevřte sedmého mě noční oceán, tajil osmý
-                                        schopen vobleky.“
+                                        Edisona umožňuje, aby mé děti získaly kompetence potřebné pro život, naučily se pracovat se vztahy k ostatním lidem i v rámci skupiny a měly znalosti o světě v širokých souvislostech. Jsem rád, že je jim to díky Edisoně dostupné.
                                     </p>
-                                    <p className="font-bold text-sm pt-2">Petr, táta Julie ze 4. ročníku</p>
+                                    <p className="font-bold text-sm pt-2">Rodič žáka Edisona</p>
+                                </div>
+                                <button className="w-6 h-6 bg-gray-50 drop-shadow-md rounded-full flex flex-col items-center text-center justify-center shrink-0" onClick={scrollNext2}>{">"}</button>
+                            </div>
+                        </div>
+                        <div className="flex-[0_0_100%] min-w-0">
+                            <div className="flex flex-row items-center h-full gap-x-4 px-2 pt-5 pb-8">
+                                <button className="w-6 h-6 bg-gray-50 drop-shadow-md rounded-full flex flex-col items-center text-center justify-center shrink-0" onClick={scrollPrev2}>{"<"}</button>
+                                <div className="flex flex-col justify-between h-full">
+                                    <p className="text-sm font-thin text-gray-800 italic">
+                                        Tuto školu bych přála zažít každému dítěti. Rozvíjení osobnosti, sebevědomí a znalosti získané nejen za lavicí. Tady neznají děti stres a průvodci (učitelé) jsou jim oporou. Děkujeme, že můžeme být součástí Edisony.
+                                    </p>
+                                    <p className="font-bold text-sm pt-2">Rodič žáka Edisona</p>
+                                </div>
+                                <button className="w-6 h-6 bg-gray-50 drop-shadow-md rounded-full flex flex-col items-center text-center justify-center shrink-0" onClick={scrollNext2}>{">"}</button>
+                            </div>
+                        </div>
+                        <div className="flex-[0_0_100%] min-w-0">
+                            <div className="flex flex-row items-center h-full gap-x-4 px-2 pt-5 pb-8">
+                                <button className="w-6 h-6 bg-gray-50 drop-shadow-md rounded-full flex flex-col items-center text-center justify-center shrink-0" onClick={scrollPrev2}>{"<"}</button>
+                                <div className="flex flex-col justify-between  h-full">
+                                    <p className="text-sm font-thin text-gray-800 italic">
+                                        Naše děti jsou v Edisoně v bezpečném a podnětném prostředí. Edisona má významný vliv nejen na naše děti, ale i na nás rodiče. Přispěla k našemu seberozvoji i k poznání nových přátel.
+
+                                    </p>
+                                    <p className="font-bold text-sm pt-2">Rodič žáka Edisona</p>
+                                </div>
+                                <button className="w-6 h-6 bg-gray-50 drop-shadow-md rounded-full flex flex-col items-center text-center justify-center shrink-0" onClick={scrollNext2}>{">"}</button>
+                            </div>
+                        </div>
+                        <div className="flex-[0_0_100%] min-w-0">
+                            <div className="flex flex-row items-center h-full gap-x-4 px-2 pt-5 pb-8">
+                                <button className="w-6 h-6 bg-gray-50 drop-shadow-md rounded-full flex flex-col items-center text-center justify-center shrink-0" onClick={scrollPrev2}>{"<"}</button>
+                                <div className="flex flex-col justify-between h-full">
+                                    <p className="text-sm font-thin text-gray-800 italic">
+                                        Edisona je naší dceři nejlepší pomocnou rukou, která ji doprovází na cestě ke hledání svého potenciálu. Servíruje jí nové znalosti a dovednosti v úměrně míře. Neměli jsme tedy na konci školního roku doma znechucenou ani přetíženou prvňačku, zato máme natěšenou budoucí druhačku, která se těší zpátky do školy. </p>
+                                    <p className="font-bold text-sm pt-2">Rodič žáka Edisona</p>
+                                </div>
+                                <button className="w-6 h-6 bg-gray-50 drop-shadow-md rounded-full flex flex-col items-center text-center justify-center shrink-0" onClick={scrollNext2}>{">"}</button>
+                            </div>
+                        </div>
+                        <div className="flex-[0_0_100%] min-w-0">
+                            <div className="flex flex-row h-full items-center gap-x-4 px-2 pt-5 pb-8">
+                                <button className="w-6 h-6 bg-gray-50 drop-shadow-md rounded-full flex flex-col items-center text-center justify-center shrink-0" onClick={scrollPrev2}>{"<"}</button>
+                                <div className="flex flex-col h-full justify-between">
+                                    <p className="text-sm font-thin text-gray-800 italic">
+                                        V prostředí školy se setkala i s úskalími a trápením. Ale s důvěrou a prakticky ihned jsme si vždy (rodina a vedení školy) dokázali problém pojmenovat. Velmi si vážím toho, jak profesionálně se vždy nastavilo řešení vzájemnou komunikací. Strkání hlavy do písku před věcmi, které potřebují řešení, tady nenajdete.</p>
+                                    <p className="font-bold text-sm pt-2">Rodič žáka Edisona</p>
                                 </div>
                                 <button className="w-6 h-6 bg-gray-50 drop-shadow-md rounded-full flex flex-col items-center text-center justify-center shrink-0" onClick={scrollNext2}>{">"}</button>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div className="flex flex-row justify-center gap-x-3 pb-10">
-                    <div className="w-2 h-2 border border-black rounded-full"></div>
-                    <div className="w-2 h-2 border border-black rounded-full"></div>
-                    <div className="w-2 h-2 border border-black rounded-full"></div>
-                    <div className="w-2 h-2 bg-black rounded-full"></div>
-                    <div className="w-2 h-2 border border-black rounded-full"></div>
-                    <div className="w-2 h-2 border border-black rounded-full"></div>
-                    <div className="w-2 h-2 border border-black rounded-full"></div>
-
                 </div>
             </div>
             <div className="hidden md:flex flex-col relative isolate overflow-hidden text-white py-10 rounded-2xl drop-shadow-md">
@@ -99,20 +148,16 @@ export default function Testimonials(){
                                 <div className="flex flex-row gap-x-14">
                                     <div className="flex flex-col">
                                         <p className=" font-light italic max-w-md">
-                                            "Kruci hraje svém civilního má naskytne zpívat ji od kope sta u
-                                            mi cosi oč ah zub zloba pomstít. Jím bok si, udal, dojde pomenší phlox otevřte sedmého mě noční oceán, tajil osmý
-                                            schopen vobleky.“
+                                            Jsme moc rádi, že našim dětem můžeme nabídnout školu, kde je vedou k sebevědomí a jistotě i k tomu, že vyjádřit své názory a pocity je úplně v pořádku. Sice se to v dnešní společnosti hodně posouvá, není to ovšem ještě na mnoha školách pravidlem. Velice si vážíme přirozeného způsobu komunikace jak s dětmi, tak s rodiči. Ukazovat dětem, že vše je řešitelné, je pro nás mnohem důležitější než cpát do nich mraky informací.
                                         </p>
-                                        <p className="font-bold text-sm pt-2">Petr, táta Julie ze 4. ročníku</p>
+                                        <p className="font-bold text-sm pt-2">Rodič žáka Edisona</p>
 
                                     </div>
                                     <div className="flex flex-col">
                                         <p className=" font-light italic max-w-md">
-                                            "Kruci hraje svém civilního má naskytne zpívat ji od kope sta u
-                                            mi cosi oč ah zub zloba pomstít. Jím bok si, udal, dojde pomenší phlox otevřte sedmého mě noční oceán, tajil osmý
-                                            schopen vobleky.“
+                                            Edisona umožňuje, aby mé děti získaly kompetence potřebné pro život, naučily se pracovat se vztahy k ostatním lidem i v rámci skupiny a měly znalosti o světě v širokých souvislostech. Jsem rád, že je jim to díky Edisoně dostupné.
                                         </p>
-                                        <p className="font-bold text-sm pt-2">Petr, táta Julie ze 4. ročníku</p>
+                                        <p className="font-bold text-sm pt-2">Rodič žáka Edisona</p>
 
                                     </div>
                                 </div>
@@ -125,20 +170,37 @@ export default function Testimonials(){
                                 <div className="flex flex-row gap-x-14">
                                     <div className="flex flex-col">
                                         <p className=" font-light italic max-w-md">
-                                            "Kruci hraje svém civilního má naskytne zpívat ji od kope sta u
-                                            mi cosi oč ah zub zloba pomstít. Jím bok si, udal, dojde pomenší phlox otevřte sedmého mě noční oceán, tajil osmý
-                                            schopen vobleky.“
+                                            Tuto školu bych přála zažít každému dítěti. Rozvíjení osobnosti, sebevědomí a znalosti získané nejen za lavicí. Tady neznají děti stres a průvodci (učitelé) jsou jim oporou. Děkujeme, že můžeme být součástí Edisony.
                                         </p>
-                                        <p className="font-bold text-sm pt-2">Petr, táta Julie ze 4. ročníku</p>
+                                        <p className="font-bold text-sm pt-2">Rodič žáka Edisona</p>
 
                                     </div>
                                     <div className="flex flex-col">
                                         <p className=" font-light italic max-w-md">
-                                            "Kruci hraje svém civilního má naskytne zpívat ji od kope sta u
-                                            mi cosi oč ah zub zloba pomstít. Jím bok si, udal, dojde pomenší phlox otevřte sedmého mě noční oceán, tajil osmý
-                                            schopen vobleky.“
+                                            Naše děti jsou v Edisoně v bezpečném a podnětném prostředí. Edisona má významný vliv nejen na naše děti, ale i na nás rodiče. Přispěla k našemu seberozvoji i k poznání nových přátel.
                                         </p>
-                                        <p className="font-bold text-sm pt-2">Petr, táta Julie ze 4. ročníku</p>
+                                        <p className="font-bold text-sm pt-2">Rodič žáka Edisona</p>
+
+                                    </div>
+                                </div>
+                                <button className="w-6 h-6 bg-gray-50 drop-shadow-md rounded-full flex flex-col items-center text-center justify-center shrink-0 text-black" onClick={scrollNext}>{">"}</button>
+                            </div>
+                        </div>
+
+                        <div className="flex-[0_0_100%] min-w-0">
+                            <div className="flex flex-row w-full justify-around pt-12 items-center">
+                                <button className="w-6 h-6 bg-gray-50 drop-shadow-md rounded-full flex flex-col items-center text-center justify-center shrink-0 text-black" onClick={scrollPrev}>{"<"}</button>
+                                <div className="flex flex-row gap-x-14">
+                                    <div className="flex flex-col">
+                                        <p className=" font-light italic max-w-md">
+                                            Edisona je naší dceři nejlepší pomocnou rukou, která ji doprovází na cestě ke hledání svého potenciálu. Servíruje jí nové znalosti a dovednosti v úměrně míře. Neměli jsme tedy na konci školního roku doma znechucenou ani přetíženou prvňačku, zato máme natěšenou budoucí druhačku, která se těší zpátky do školy. </p>
+                                        <p className="font-bold text-sm pt-2">Rodič žáka Edisona</p>
+
+                                    </div>
+                                    <div className="flex flex-col">
+                                        <p className=" font-light italic max-w-md">
+                                            V prostředí školy se setkala i s úskalími a trápením. Ale s důvěrou a prakticky ihned jsme si vždy (rodina a vedení školy) dokázali problém pojmenovat. Velmi si vážím toho, jak profesionálně se vždy nastavilo řešení vzájemnou komunikací. Strkání hlavy do písku před věcmi, které potřebují řešení, tady nenajdete.</p>
+                                        <p className="font-bold text-sm pt-2">Rodič žáka Edisona</p>
 
                                     </div>
                                 </div>
@@ -147,16 +209,7 @@ export default function Testimonials(){
                         </div>
                     </div>
                 </div>
-                <div className="flex flex-row justify-center gap-x-3 pt-12 pb-10">
-                    <div className="w-2 h-2 border-2 border-white rounded-full"></div>
-                    <div className="w-2 h-2 border-2 border-white rounded-full"></div>
-                    <div className="w-2 h-2 border-2 border-white rounded-full"></div>
-                    <div className="w-2 h-2 bg-white rounded-full"></div>
-                    <div className="w-2 h-2 border-2 border-white rounded-full"></div>
-                    <div className="w-2 h-2 border-2 border-white rounded-full"></div>
-                    <div className="w-2 h-2 border-2 border-white rounded-full"></div>
 
-                </div>
             </div>
         </div>
     )

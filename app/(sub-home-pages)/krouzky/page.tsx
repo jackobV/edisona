@@ -4,6 +4,7 @@ import HomeFooter from "@/app/(home-components)/homeFooter";
 import {Metadata} from "next";
 import KrouzkyFullListing from "@/app/(sub-home-pages)/krouzky/(components)/krouzkyFullListing";
 import UvodniSlovoKrouzky from "@/app/(sub-home-pages)/krouzky/(components)/UvodniSlovoKrouzky";
+import Krouzkyslovo from "@/app/(sub-home-pages)/krouzky/(components)/Krouzkyslovo";
 export const metadata: Metadata = {
     title: 'Kroužky - Edisona.cz',
 }
@@ -18,6 +19,9 @@ export default function Page(){
                 </section>
                 <section className="pt-10 bg-[#F4F4F4]">
                     <UvodniSlovoKrouzky />
+                </section>
+                <section>
+                    <Krouzkyslovo />
                 </section>
                 <section className="pt-20 bg-[#F4F4F4]">
                     <KrouzkyFullListing />

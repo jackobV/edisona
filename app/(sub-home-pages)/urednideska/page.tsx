@@ -19,7 +19,8 @@ import ELS from "@/app/(general-media)/(shapes)/(ellipse)/(mobile)/ELS";
 import PRS from "@/app/(general-media)/(shapes)/(pollygon)/(mobile)/PRS";
 import PLS3 from "@/app/(general-media)/(shapes)/(pollygon)/(mobile)/PLS3";
 import PL3 from "@/app/(general-media)/(shapes)/(pollygon)/PL3";
-import Testimonials from "@/app/(home-components)/testimonials";
+import UvodniSlovoUredniDeska from "@/app/(sub-home-pages)/urednideska/(urednideska-components)/uvodniSlovoUredniDeska";
+import Dokumentykestazenilist from "@/app/(sub-home-pages)/urednideska/(urednideska-components)/dokumentykestazenilist";
 
 // either Static metadata
 export const metadata: Metadata = {
@@ -27,40 +28,21 @@ export const metadata: Metadata = {
 }
 export default function TridaAVybaveni(){
     return(
-        <main className="bg-[#E2E2E2] overflow-hidden">
-            <section className="bg-[#F4F4F4]">
+        <main className="bg-[#F4F4F4] overflow-hidden">
+            <section className="">
                 <div className="relative">
                     <SubHomeTopMenu />
                 </div>
-                <section className="absolute w-full h-full flex flex-col hidden md:inline">
-                    <ELS />
-                    <div className="pt-10 pr-20">
-                        <PRS />
-                    </div>
-                    <div className="pt-10">
-                        <PL3 />
-                    </div>
-                </section>
-                <section className="absolute w-full h-full flex flex-col pt-20 md:hidden ">
-                    <ERS />
-                    <PL />
-                </section>
                 <SubHomeMenu text={"2"} />
             </section>
-            <section className="pt-10 bg-[#F4F4F4] overflow-hidden">
-                <TemplateBg1 />
-                <section className="">
-                    <LandingTextWithCarousal />
-                </section>
-                <section className=" py-16">
-                    <TridaAVybaveniCarousal />
-                </section>
-                <section className=" rounded-b-2xl drop-shadow-md pb-32">
-                    <VirtualniProhlidka />
-                </section>
+            <section className="pt-10">
+                <UvodniSlovoUredniDeska />
+            </section>
+            <section className="pt-10">
+                <Dokumentykestazenilist />
             </section>
             <section className="py-16 drop-shadow-md overflow-hidden">
-                <Testimonials />
+                <RodiceTestimonials />
             </section>
             <section className="bg-[#F4F4F4] rounded-t-2xl drop-shadow-md overflow-hidden">
                 <PruvodciaprihlaskaCTA />
