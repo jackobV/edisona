@@ -12,6 +12,17 @@
     font-weight: 500;
     padding-bottom: 0.5rem;
 }
+.bodyArticle h3 {
+    padding-top: 0.5rem;
+
+    font-size:1.20rem;
+    font-weight: 400;
+    padding-bottom: 0.5rem;
+}
+.bodyArticle a {
+    color: rgb(59 130 246);
+    text-decoration-line: underline;
+}
 .bodyArticle ul {
     padding-top:0.25rem;
     padding-bottom:0.25rem;
