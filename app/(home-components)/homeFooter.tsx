@@ -8,17 +8,15 @@ export default function HomeFooter(){
                     <div className="flex flex-col">
                         <h3 className="font-semibold tracking-tight text-base">Základní škola Edisona</h3>
                         <p className="pt-1">Bítovská 1122/5, Praha 4</p>
-                        <a className="underline pt-5">Zobrazit na mapě</a>
+                        <a href="https://maps.app.goo.gl/szujZtp8WBuDVoZPA" className="underline pt-5">Zobrazit na mapě</a>
                     </div>
                     <div className="flex flex-col pt-5 md:pt-0">
-                        <a className="underline">+420 602 462 617</a>
-                        <a className="underline pt-1">pavla.sadilkova@edisona.cz</a>
-                        <a className="underline pt-5">Náš Facebook</a>
+                        <a href="tel:+420602462617" className="underline">+420 602 462 617</a>
+                        <a href="mailto:pavla.sadilova@edisona.cz" className="underline pt-1">pavla.sadilova@edisona.cz</a>
+                        <a href="https://www.facebook.com/edisonaskola" className="underline pt-5">Náš Facebook</a>
                     </div>
                     <div className="flex flex-col pt-5 md:pt-0">
                         <a className="underline" href="/urednideska">Úřední deska</a>
-                        <a className="underline pt-1">Organizace školního roku</a>
-                        <a className="underline pt-1">Školská rada</a>
                     </div>
                     <div className="flex flex-row gap-x-1 items-center pt-5 md:pt-0 self-start">
                         <Image src={EdookitLogo} alt={"Edookit logo"} />

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import zakladatelSlovo from "../../(sub-home-media)/zakladatelslovofoto.png"
-import zakladatelSlovoSmall from "../../(sub-home-media)/zakladatelslovosmall.png"
+import zakladatelSlovoSmall from "./(koncepce-media)/koncepceslovo.png"
 import denisafoto from "../../(sub-home-media)/denisafoto.jpeg"
 export default function KoncepceTestimonialSlovo(){
     return(

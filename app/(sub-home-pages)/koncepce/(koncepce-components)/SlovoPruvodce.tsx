@@ -1,37 +1,40 @@
+import PavlaSadilkova from "../(home-media)/pavla_sadilova.png"
 import Image from "next/image";
-import zakladatelSlovo from "../../(sub-home-media)/zakladatelslovofoto.png"
-import zakladatelSlovoSmall from "../../(sub-home-media)/zakladatelslovosmall.png"
-import denisafoto from "../../(sub-home-media)/denisafoto.jpeg"
+import krouzkyslovo from "../../krouzky/(components)/(media)/krouzkyslovo.png"
+import koncepceslovolarge from "../(koncepce-components)/(koncepce-media)/koncepceslovolarge.png"
+import koncepceslovosmall from "../(koncepce-components)/(koncepce-media)/koncepceslovo.png"
+
 export default function SlovoPruvodce(){
     return(
-        <div className="mx-auto max-w-7xl px-4 lg:px-8 pb-2 ">
-            <div className="flex flex-col bg-[#FED032] drop-shadow-md rounded-xl pb-10 px-5 md:hidden">
-                <div className=" font-light italic">
-                    <p>„Učíme děti, jak pracovat se stresem, porozumět svým emocím, nenechat se pohltit svými myšlenkami a být tady a teď. Vedeme je k seberozvoji, osvojujeme si techniky mindfulness a dbáme na osobní pohodu jedince, tzv. welbeing.“
+        <div className="mx-auto max-w-7xl px-6 lg:px-8 pb-2 ">
+            <div className="flex flex-col bg-[#DB574E] drop-shadow-md rounded-xl py-10 px-5 md:hidden">
+                <div className="text-white font-light italic">
+                    <p>“Učíme zážitkem a aktivně. Probouzíme a podporujeme v dětech zvědavost a vedeme je k odpovědnosti za své učení. Vedeme je k sobě samým. Učí se komunikovat, pracovat v týmu, debatovat a řešit konflikty.”
                     </p>
                 </div>
                 <div className="flex flex-row pt-8 gap-x-3">
                     <div className="w-20 h-20 flex flex-col shrink-0 drop-shadow-md">
-                        <Image src={denisafoto} alt={"ZakladatelSlovo"} />
+                        <Image src={koncepceslovosmall} alt={"Mgr. Denisa Sládečková (Tichavová)"} className="rounded-full overflow-hidden h-20 w-20" />
                     </div>
-                    <div className=" flex flex-col gap-y-1">
-                        <p className="font-bold ">Mgr. Denisa Tichavová</p>
-                        <p className="font-light text-sm">Průvodkyně II. trojročí, výchovná poradkyně</p>
+                    <div className="text-white flex flex-col gap-y-1">
+                        <p className="font-bold ">Mgr. Denisa Sládečková (Tichavová)
+                        </p>
+                        <p className="font-light text-sm">Průvodkyně II. trojročí, výchovná poradkyně </p>
                     </div>
                 </div>
             </div>
             <div className="hidden md:flex flex-col relative isolate overflow-hidden  py-20 rounded-2xl w-full drop-shadow-md">
                 <div className="absolute inset-0 -z-10 h-full w-full border     ">
-                    <Image src={denisafoto} alt={"ZakladatelSlovo"} className="w-full h-full object-cover object-right-top" />
+                    <Image src={koncepceslovolarge} alt={"PavlaTestimonial"} className="w-full h-full object-cover" />
                 </div>
                 <div className="flex flex-row">
-                    <div className="flex flex-col w-2/3"></div>
-                    <div className="flex flex-col w-full">
+                    <div className="w-2/3"></div>
+                    <div className="flex flex-col w-full pl-10">
                         <div className="flex flex-col max-w-md">
-                            <p>„Edisona je pro mě oč co nevidím pochodu chytrý. A hlav mě sám pes? Záměr k hejbaly přihrčela vypáčeno ex vmíchal od popravy vechtrovský rejpanec tos záhad tři ně rutinu role sůl ze za by vzdělaní nelže neb hokynářky kůží vrhl.“
+                            <p>“Učíme zážitkem a aktivně. Probouzíme a podporujeme v dětech zvědavost a vedeme je k odpovědnosti za své učení. Vedeme je k sobě samým. Učí se komunikovat, pracovat v týmu, debatovat a řešit konflikty.”
                             </p>
-                            <p className="font-bold pt-4">Mgr. Pavla Sadílková, MBA</p>
-                            <p className="font-light text-sm py-2">Ředitelka a zakladatelka školy</p>
+                            <p className="font-bold pt-4">Mgr. Denisa Sládečková (Tichavová)</p>
+                            <p className="font-light text-sm py-2">Průvodkyně II. trojročí, výchovná poradkyně</p>
                         </div>
 
                     </div>

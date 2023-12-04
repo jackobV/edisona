@@ -6,7 +6,7 @@ export default function Krouzkyslovo(){
         <div className="mx-auto max-w-7xl px-6 lg:px-8 pb-2 ">
             <div className="flex flex-col bg-[#DB574E] drop-shadow-md rounded-xl py-10 px-5 md:hidden">
                 <div className="text-white font-light italic">
-                    <p>“Učíme zážitkem a aktivně. Probouzíme a podporujeme v dětech zvědavost a vedeme je k odpovědnosti za své učení. Vedeme je k sobě samým. Učí se komunikovat, pracovat v týmu, debatovat a řešit konflikty.”
+                    <p>“Velký důraz klademe na hudební vkus a individualitu každého dítěte. Proto je hra na klavír i zpěv popových a muzikálových písní pro děti zábavnější a přínosnější.”
                     </p>
                 </div>
                 <div className="flex flex-row pt-8 gap-x-3">
@@ -14,9 +14,9 @@ export default function Krouzkyslovo(){
                         <Image src={krouzkyslovo} alt={"Mgr. Denisa Sládečková (Tichavová)"} className="rounded-full overflow-hidden h-20 w-20" />
                     </div>
                     <div className="text-white flex flex-col gap-y-1">
-                        <p className="font-bold ">Mgr. Denisa Sládečková (Tichavová)
+                        <p className="font-bold ">Dominika Čompová
                         </p>
-                        <p className="font-light text-sm">Průvodkyně II. trojročí, výchovná poradkyně </p>
+                        <p className="font-light text-sm">lektorka klavíru a zpěvu </p>
                     </div>
                 </div>
             </div>
@@ -27,10 +27,10 @@ export default function Krouzkyslovo(){
                 <div className="flex flex-row">
                     <div className="flex flex-col w-full pl-10">
                         <div className="flex flex-col max-w-md">
-                            <p>“Učíme zážitkem a aktivně. Probouzíme a podporujeme v dětech zvědavost a vedeme je k odpovědnosti za své učení. Vedeme je k sobě samým. Učí se komunikovat, pracovat v týmu, debatovat a řešit konflikty.”
+                            <p>“Velký důraz klademe na hudební vkus a individualitu každého dítěte. Proto je hra na klavír i zpěv popových a muzikálových písní pro děti zábavnější a přínosnější.”
                             </p>
-                            <p className="font-bold pt-4">Mgr. Denisa Sládečková (Tichavová)</p>
-                            <p className="font-light text-sm py-2">Průvodkyně II. trojročí, výchovná poradkyně</p>
+                            <p className="font-bold pt-4">Dominika Čompová</p>
+                            <p className="font-light text-sm py-2">lektorka klavíru a zpěvu</p>
                             <a href="/koncepce" className="w-fit bg-white w-fit text-black py-2 px-5 rounded-xl font-medium tracking-tight drop-shadow-md">Více o koncepci školy</a>
                         </div>
 

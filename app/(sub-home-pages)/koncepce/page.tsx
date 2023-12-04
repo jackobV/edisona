@@ -63,7 +63,7 @@ export default function Home(){
                     <UvodniSlovoKoncepce />
                 </section>
                 <section className=" pt-16">
-                    <Krouzkyslovo />
+                    <SlovoPruvodce />
                 </section>
                 <section className=" pt-16">
                     <SVP />

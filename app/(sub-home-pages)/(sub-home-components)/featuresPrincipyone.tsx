@@ -15,7 +15,7 @@
 import Image from "next/image";
 import duveraImage from "../vizeskoly/(vize-skoly-media)/DSC_6118.jpg"
 import svobodaImage from "../vizeskoly/(vize-skoly-media)/DSC_6099.jpg"
-import smysluplnostImage from "../vizeskoly/(vize-skoly-media)/DSC_6286.jpg"
+import smysluplnostImage from "../vizeskoly/(vize-skoly-media)/DSC_6268.jpg"
 
 import feature2foto from "../(sub-home-media)/feature2foto.png"
 import feature3foto from "../(sub-home-media)/feature3foto.png"

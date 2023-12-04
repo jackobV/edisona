@@ -14,7 +14,7 @@
 */
 import Image from "next/image";
 import edikaImage from "../../(sub-home-media)/edika.png"
-import feature2foto from "../../(sub-home-media)/feature2foto.png"
+import feature2foto from "./(koncepce-media)/DSC_6163.jpg"
 const features = [
     {
         name: 'Vzdělávací koncept EDIKA',

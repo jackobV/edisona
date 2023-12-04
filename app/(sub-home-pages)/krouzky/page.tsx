@@ -20,7 +20,7 @@ export default function Page(){
                 <section className="pt-10 bg-[#F4F4F4]">
                     <UvodniSlovoKrouzky />
                 </section>
-                <section>
+                <section className="py-10 bg-[#F4F4F4]">
                     <Krouzkyslovo />
                 </section>
                 <section className="pt-20 bg-[#F4F4F4]">

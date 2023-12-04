@@ -6,6 +6,9 @@ import kurzy from "../../(sub-home-media)/(spolupracesrodiciFeaturesIcons)/vzdel
 import dobrovolnictvi from "../../(sub-home-media)/(spolupracesrodiciFeaturesIcons)/dobrovolnictvi.png"
 import krouzky from "../../(sub-home-media)/(spolupracesrodiciFeaturesIcons)/krouzky.png"
 import vylety from "../../(sub-home-media)/(spolupracesrodiciFeaturesIcons)/vylety.png"
+import dnyotevrenychdveri from "../../(sub-home-media)/(spolupracesrodiciFeaturesIcons)/door.png"
+import rodice from "../../(sub-home-media)/(spolupracesrodiciFeaturesIcons)/parents.png"
+
 import Image from "next/image";
 
 export default function SpolupraceSRodiciFeatures(){
@@ -25,10 +28,16 @@ export default function SpolupraceSRodiciFeatures(){
             title: "Dílny pro žáky i dospělé",
             text: "Vánoční, velikonoční a jiné dílny"
         },
+
         {
             image: slavnosti,
             title: "Slavnosti",
             text: "Slavnostní zahájení a ukončení školního roku"
+        },
+        {
+            image: dnyotevrenychdveri,
+            title: "Dny otevřených dveří",
+            text: "Přijďte se podívat, jak to u nás vypadá"
         },
         {
             image: kurzy,
@@ -45,6 +54,13 @@ export default function SpolupraceSRodiciFeatures(){
             title: "Kroužky a pracovní zkušenosti",
             text: "Odpolední kroužky či návštěvy na pracovišti rodičů"
         },
+        {
+            image: rodice,
+            title: "Rada rodičů",
+            text: "Pravidelné schůzky rodičů s vedením školy"
+        },
+
+
 
     ]
     function classNames(...classes: string[]) {
