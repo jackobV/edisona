@@ -20,7 +20,7 @@ export default function HomeFooter(){
                     </div>
                     <div className="flex flex-row gap-x-1 items-center pt-5 md:pt-0 self-start">
                         <Image src={EdookitLogo} alt={"Edookit logo"} />
-                        <p className="underline">Edookit</p>
+                        <a href="https://edisona-login.edookit.net/" className="underline">Edookit</a>
                     </div>
                 </div>
             </div>
