@@ -24,6 +24,7 @@ export default function NovinkyFullArticles(){
             const response = await pb.collection("aktuality").getList(page,8,{
                 sort:'-datum'
             })
+
             const returnedData:Array<aktualita> = response.items.map((record:any) =>({
                 title:record.title,
                 description:record.preview_text,
@@ -40,7 +41,10 @@ export default function NovinkyFullArticles(){
     async function fetchMoreData() {
         try {
             setLoadingMoreData(true)
-            const response = await pb.collection("aktuality").getList(page,8)
+            const response = await pb.collection("aktuality").getList(page,8,
+                {
+                    sort:'-datum'
+                })
             if (response.totalPages >= page){
                 const returnedData:Array<aktualita> = response.items.map((record:any) =>({
                     title:record.title,
@@ -62,6 +66,7 @@ export default function NovinkyFullArticles(){
     }
     const pb = new PocketBase('https://pocketbase-production-ab0e.up.railway.app');
     useEffect(() => {
+        console.log("fetching")
         fetchData();
     }, []);
     useEffect(()=>{
@@ -90,8 +95,8 @@ export default function NovinkyFullArticles(){
                 ) : loadingMoreData ? (
                     <div className="flex flex-col w-full">
                         <div className="grid grid-cols-3 gap-y-10 sm:grid-cols-6 md:grid-cols-9 lg:grid-cols-12 gap-x-6 place-items-center">
-                                {data.map((item)=>(
-                                    <div className="col-span-3 w-full">
+                                {data.map((item,key)=>(
+                                    <div className="col-span-3 w-full" key={key}>
                                         <Aktualita id={item.id} title={item.title} description={item.description} thumbnail={"https://pocketbase-production-ab0e.up.railway.app/api/files/xyozhjstnob0eer/"+item.id+"/"+item.thumbnail} />
                                     </div>
                                 ))}
@@ -116,8 +121,8 @@ export default function NovinkyFullArticles(){
                     : (
                     <div>
                         <div className="grid grid-cols-3 gap-y-10 sm:grid-cols-6 md:grid-cols-9 lg:grid-cols-12 gap-x-6 place-items-center">
-                            {data.map((item)=>(
-                                <div className="col-span-3">
+                            {data.map((item,key)=>(
+                                <div className="col-span-3" key={key}>
                                     <Aktualita id={item.id} title={item.title} description={item.description} thumbnail={"https://pocketbase-production-ab0e.up.railway.app/api/files/xyozhjstnob0eer/"+item.id+"/"+item.thumbnail} />
                                 </div>
                             ))}
