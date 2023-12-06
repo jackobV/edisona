@@ -22,9 +22,7 @@ export default function NovinkyFullArticles(){
         try {
             setLoading(true)
             const response = await pb.collection("aktuality").getList(page,8,{
-                sort: "-datum",
-                keepalive: false,
-                cache:     'no-store',
+                sort:'-datum'
             })
             const returnedData:Array<aktualita> = response.items.map((record:any) =>({
                 title:record.title,

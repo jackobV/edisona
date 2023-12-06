@@ -21,6 +21,7 @@ import PLS3 from "@/app/(general-media)/(shapes)/(pollygon)/(mobile)/PLS3";
 import PL3 from "@/app/(general-media)/(shapes)/(pollygon)/PL3";
 import UvodniSlovoUredniDeska from "@/app/(sub-home-pages)/urednideska/(urednideska-components)/uvodniSlovoUredniDeska";
 import Dokumentykestazenilist from "@/app/(sub-home-pages)/urednideska/(urednideska-components)/dokumentykestazenilist";
+import Testimonials from "@/app/(home-components)/testimonials";
 
 // either Static metadata
 export const metadata: Metadata = {
@@ -42,7 +43,7 @@ export default function TridaAVybaveni(){
                 <Dokumentykestazenilist />
             </section>
             <section className="py-16 drop-shadow-md overflow-hidden">
-                <RodiceTestimonials />
+                <Testimonials />
             </section>
             <section className="bg-[#F4F4F4] rounded-t-2xl drop-shadow-md overflow-hidden">
                 <PruvodciaprihlaskaCTA />

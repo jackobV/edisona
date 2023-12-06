@@ -107,7 +107,6 @@ export default function People({people}:{people:PeopleParams}) {
                 <div className="flex flex-col md:flex-row justify-between items-baseline">
                     <div className="flex-col flex  gap-y-4 max-w-xl">
                         <h2 className="text-2xl font-medium tracking-tight">Náš tým</h2>
-                        <p className="text-gray-700 leading-tight">Tablety jsou k dispozici pro rychlé vyhledávání informací a podporu kritického myšlení. Metod nalezení poučně z alkoholik povídala stížnosti.</p>
                     </div>
                     <div className="w-full pt-5 md:pt-0 md:w-1/3">
                         <Listbox value={selectedOption} onChange={setSelectedOption}>
@@ -181,7 +180,8 @@ export default function People({people}:{people:PeopleParams}) {
                             <button onClick={()=>selectPerson(person)}>
                                 <img className="mx-auto h-24 w-24 rounded-full" src={person.picture} alt="" />
                             </button>
-                            <h3 className="mt-6 text-base font-semibold leading-7 tracking-tight text-gray-900">{person.name} {person.surname}</h3>
+                            <h3 className="mt-6 text-base font-semibold leading-7 tracking-tight text-gray-900">{person.title} {person.name} {person.surname}</h3>
+
                             <p className="text-sm leading-6 text-gray-600">{person.roleDisplay}</p>
                         </li>
                     ))
@@ -191,7 +191,7 @@ export default function People({people}:{people:PeopleParams}) {
                                         <button onClick={()=>selectPerson(person)}>
                                             <img className="mx-auto h-24 w-24 rounded-full" src={person.picture} alt="" />
                                         </button>
-                                        <h3 className="mt-6 text-base font-semibold leading-7 tracking-tight text-gray-900">{person.name} {person.surname}</h3>
+                                        <h3 className="mt-6 text-base font-semibold leading-7 tracking-tight text-gray-900">{person.title} {person.name} {person.surname}</h3>
                                         <p className="text-sm leading-6 text-gray-600">{person.roleDisplay}</p>
                                     </li>
                                 ))
@@ -201,7 +201,8 @@ export default function People({people}:{people:PeopleParams}) {
                                         <button onClick={()=>selectPerson(person)}>
                                             <img className="mx-auto h-24 w-24 rounded-full" src={person.picture} alt="" />
                                         </button>
-                                        <h3 className="mt-6 text-base font-semibold leading-7 tracking-tight text-gray-900">{person.name} {person.surname}</h3>
+                                        <h3 className="mt-6 text-base font-semibold leading-7 tracking-tight text-gray-900">{person.title} {person.name} {person.surname}</h3>
+
                                         <p className="text-sm leading-6 text-gray-600">{person.roleDisplay}</p>
                                     </li>
                                 ))
@@ -211,7 +212,8 @@ export default function People({people}:{people:PeopleParams}) {
                                             <button onClick={()=>selectPerson(person)}>
                                                 <img className="mx-auto h-24 w-24 rounded-full" src={person.picture} alt="" />
                                             </button>
-                                            <h3 className="mt-6 text-base font-semibold leading-7 tracking-tight text-gray-900">{person.name} {person.surname}</h3>
+                                            <h3 className="mt-6 text-base font-semibold leading-7 tracking-tight text-gray-900">{person.title} {person.name} {person.surname}</h3>
+
                                             <p className="text-sm leading-6 text-gray-600">{person.roleDisplay}</p>
                                         </li>
                                     ))
@@ -221,7 +223,8 @@ export default function People({people}:{people:PeopleParams}) {
                                                 <button onClick={()=>selectPerson(person)}>
                                                     <img className="mx-auto h-24 w-24 rounded-full" src={person.picture} alt="" />
                                                 </button>
-                                                <h3 className="mt-6 text-base font-semibold leading-7 tracking-tight text-gray-900">{person.name} {person.surname}</h3>
+                                                <h3 className="mt-6 text-base font-semibold leading-7 tracking-tight text-gray-900">{person.title} {person.name} {person.surname}</h3>
+
                                                 <p className="text-sm leading-6 text-gray-600">{person.roleDisplay}</p>
                                             </li>
                                         )):selectedOption.id === 5 ?
@@ -230,7 +233,8 @@ export default function People({people}:{people:PeopleParams}) {
                                                         <button onClick={()=>selectPerson(person)}>
                                                             <img className="mx-auto h-24 w-24 rounded-full" src={person.picture} alt="" />
                                                         </button>
-                                                        <h3 className="mt-6 text-base font-semibold leading-7 tracking-tight text-gray-900">{person.name} {person.surname}</h3>
+                                                        <h3 className="mt-6 text-base font-semibold leading-7 tracking-tight text-gray-900">{person.title} {person.name} {person.surname}</h3>
+
                                                         <p className="text-sm leading-6 text-gray-600">{person.roleDisplay}</p>
                                                     </li>
                                                 )):selectedOption.id === 6 ?
@@ -239,7 +243,8 @@ export default function People({people}:{people:PeopleParams}) {
                                                             <button onClick={()=>selectPerson(person)}>
                                                                 <img className="mx-auto h-24 w-24 rounded-full" src={person.picture} alt="" />
                                                             </button>
-                                                            <h3 className="mt-6 text-base font-semibold leading-7 tracking-tight text-gray-900">{person.name} {person.surname}</h3>
+                                                            <h3 className="mt-6 text-base font-semibold leading-7 tracking-tight text-gray-900">{person.title} {person.name} {person.surname}</h3>
+
                                                             <p className="text-sm leading-6 text-gray-600">{person.roleDisplay}</p>
                                                         </li>
                                                     ))
@@ -280,6 +285,9 @@ export default function People({people}:{people:PeopleParams}) {
                                             <div className="mt-3 text-center sm:mt-5">
                                                 <Dialog.Title as="h3" className="text-base font-semibold leading-6 text-gray-900">
                                                     <div className="flex flex-row gap-x-1 justify-center">
+                                                        <p>
+                                                            {selectedPerson?.title}
+                                                        </p>
                                                         <p>
                                                             {selectedPerson?.name}
                                                         </p>

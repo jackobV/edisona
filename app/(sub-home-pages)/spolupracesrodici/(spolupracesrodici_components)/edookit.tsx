@@ -12,9 +12,9 @@ export default function Edookit(){
                 </p>
             </div>
             <div className="max-w-md mx-auto pt-10">
-                <div className="rounded-md drop-shadow-md overflow-hidden">
+                <a href="https://edisona-login.edookit.net/" className="rounded-md drop-shadow-md overflow-hidden">
                     <Image src={edookitbanner} alt={"edookit banner"} />
-                </div>
+                </a>
             </div>
         </div>
     )
