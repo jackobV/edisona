@@ -6,7 +6,7 @@ export default function UvodniSlovoUredniDeska(){
             <div className="flex flex-col items-center text-center">
                 <h1 className="font-semibold text-3xl tracking-tight z-10">Úřední deska</h1>
                 <p className="max-w-3xl pt-10 font-light text-gray-600 z-10">
-                    Zde najdete důležité dokumenty ke stažení </p>
+                    Elektronická úřední deska je zřizována v souladu s ust. § 26 zákona č. 500/2004 Sb., správního řádu, a je určena ke zveřejňování dokumentů vyvěšených na úřední desce Základní školy Edisona, Bítovská 1122/5 Praha 4 způsobem umožňující dálkový přístup. Obsah má informativní charakter. Zveřejněné dokumenty jsou současně také na stacionární úřední desce, která je umístěna ve vstupní hale Základní školy Edisona, Bítovská 1122/5 Praha 4 . </p>
             </div>
         </div>
     )

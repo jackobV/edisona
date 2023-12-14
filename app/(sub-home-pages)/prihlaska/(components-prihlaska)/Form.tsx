@@ -69,7 +69,7 @@ export default function Form(){
                 </div>
                 <div className="pt-3 flex flex-col">
                     <p className="">Zpráva</p>
-                    <textarea placeholder="Prosíme upřesněte, proč myslíte, že Edisona je to pravé pro Vás a Vaše dítě, něco o dítěti, cokoliv důležitého Vás napadne. O nás už toho víte dost, tak teď jste na řadě vy. :-)" className=" h-36 block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" onChange={e => setMessage(e.target.value)} ref={messageRef} value={message} />
+                    <textarea placeholder="Prosíme upřesněte, proč myslíte, že Edisona je to pravé pro Vás a Vaše dítě, něco o dítěti, cokoliv důležitého Vás napadne. O nás už toho víte dost, tak teď jste na řadě Vy. :-)" className=" h-36 block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6" onChange={e => setMessage(e.target.value)} ref={messageRef} value={message} />
                 </div>
                 <div className="flex flex-col items-center pt-3">
                     <button className="sm:w-fit w-full bg-white text-black py-2 px-10 rounded-xl font-medium tracking-tight drop-shadow-md">Odeslat zprávu</button>

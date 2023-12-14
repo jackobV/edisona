@@ -1,4 +1,5 @@
 import PavlaSadilkova from "../(home-media)/pavla_sadilova.png"
+import dominikalarge from "../../(sub-home-media)/Dominikalarge.jpg"
 import Image from "next/image";
 import krouzkyslovo from "./(media)/krouzkyslovo.png"
 export default function Krouzkyslovo(){
@@ -20,11 +21,12 @@ export default function Krouzkyslovo(){
                     </div>
                 </div>
             </div>
-            <div className="hidden md:flex flex-col relative isolate overflow-hidden text-white py-20 rounded-2xl w-full drop-shadow-md">
+            <div className="hidden md:flex flex-col relative isolate overflow-hidden  py-20 rounded-2xl w-full drop-shadow-md">
                 <div className="absolute inset-0 -z-10 h-full w-full border     ">
-                    <Image src={krouzkyslovo} alt={"PavlaTestimonial"} className="w-full h-full object-cover" />
+                    <Image src={dominikalarge} alt={"PavlaTestimonial"} className="w-full h-full object-cover" />
                 </div>
                 <div className="flex flex-row">
+                    <div className="w-1/2"></div>
                     <div className="flex flex-col w-full pl-10">
                         <div className="flex flex-col max-w-md">
                             <p>“Velký důraz klademe na hudební vkus a individualitu každého dítěte. Proto je hra na klavír i zpěv popových a muzikálových písní pro děti zábavnější a přínosnější.”

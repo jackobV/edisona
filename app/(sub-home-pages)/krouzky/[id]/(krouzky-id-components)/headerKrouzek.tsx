@@ -12,11 +12,12 @@ export default function HeaderKrouzek(props:NovinkaHeaderContent){
             <h1 className="text-3xl font-semibold tracking-tight text-center">
                 {props.title}
             </h1>
-            <div className="pt-5 text-center font-light text-gray-400">
-                {props.datum}
-            </div>
             <div className="flex flex-col items-center object-contain  pt-5">
-                <Image src={"https://pocketbase-production-ab0e.up.railway.app/api/files/mz2k9c7rmd5db1b/"+props.id+"/"+props.previewImage} alt={props.title} width={500} height={400} className="rounded-xl overflow-hidden drop-shadow-md" />
+                {props.previewImage?
+                        <Image src={"https://pocketbase-production-ab0e.up.railway.app/api/files/mz2k9c7rmd5db1b/"+props.id+"/"+props.previewImage} alt={props.title} width={500} height={400} className="rounded-xl overflow-hidden drop-shadow-md" />
+                        :
+                    <div className="rounded-xl overflow-hidden drop-shadow-md bg-gray-50 h-full w-full"></div>
+                }
             </div>
         </div>
     )

@@ -81,9 +81,6 @@ export default async function PruvodciATymPage(){
                     <People people={people} />
                 </section>
             </section>
-            <section className=" rounded-t-2xl drop-shadow-md">
-                <PruvodciaprihlaskaCTA />
-            </section>
             <section>
                 <HomeFooter />
             </section>

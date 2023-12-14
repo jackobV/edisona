@@ -34,7 +34,7 @@ export default function KrouzkyFullListing(){
     async function fetchMoreData() {
         try {
             setLoadingMoreData(true)
-            const response = await pb.collection("krouzky").getList(page,8)
+            const response = await pb.collection("krouzky").getList(page,20)
             if (response.totalPages >= page){
                 const returnedData:Array<krouzek> = response.items.map((record:any) =>({
                     title:record.title,

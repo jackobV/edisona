@@ -14,7 +14,7 @@ const navigation = [
 const navigationRight = [
     { name: 'Kroužky', href: '/krouzky' },
     { name: 'Novinky', href: '/novinky' },
-    { name: 'Kontakt', href: '/pruvodciatym' },
+    { name: 'Kontakt', href: '/kontakt' },
 ]
 export default function SubHomeTopMenu(){
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
