@@ -6,9 +6,6 @@ export default function ContactSection() {
                     <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-3">
                         <div>
                             <h2 className="text-3xl font-bold tracking-tight text-gray-900">Kontaktujte nás</h2>
-                            <p className="mt-4 leading-7 text-gray-600">
-                                Quam nunc nunc eu sed. Sed rhoncus quis ultricies ac pellentesque.
-                            </p>
                         </div>
                         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:col-span-2 lg:gap-8">
                             <div className="rounded-2xl bg-gray-50 p-10">
@@ -149,31 +146,6 @@ export default function ContactSection() {
                                     <div className="mt-1">
                                         <dt className="sr-only"> za pedagogy</dt>
                                         <dd>Adam Hošek - za pedagogy</dd>
-                                    </div>
-                                </dl>
-                            </div>
-                            <div className="rounded-2xl bg-gray-50 p-10">
-                                <h3 className="text-base font-semibold leading-7 text-gray-900">Pověřenec GDPR</h3>
-                                <dl className="mt-3 space-y-1 text-sm leading-6 text-gray-600">
-                                    <div>
-                                        <dt className="sr-only">Jméno</dt>
-                                        <dd>
-                                            <p className="">
-                                                Mgr. Jan Baše
-                                            </p>
-                                        </dd>
-                                    </div>
-                                    <div className="mt-1">
-                                        <dt className="sr-only">Tel:</dt>
-                                        <dd>+430 724 063 897</dd>
-                                    </div>
-                                    <div className="mt-1">
-                                        <dt className="sr-only">Email</dt>
-                                        <dd>base@procurio.cz</dd>
-                                    </div>
-                                    <div className="mt-1">
-                                        <dt className="sr-only">Adresa</dt>
-                                        <dd>Vrchlického 678/19, 500 11 Hradec Králové</dd>
                                     </div>
                                 </dl>
                             </div>
