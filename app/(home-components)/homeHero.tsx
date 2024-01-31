@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
-import picture from "../(home-media)/na-zkousku-picture-2.jpg"
+import picture from "../(home-media)/uvodni.jpg"
 import EdisonaLogoWhite from"../(home-media)/edisonaLogoWhite.png"
 
 const navigation = [
@@ -23,10 +23,15 @@ export default function HomeHero() {
     return (
         <div className="bg-[#F4F4F4]">
             <header className="absolute inset-x-0 top-0 z-50">
-                <nav className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
+                <nav className="mx-auto flex max-w-8xl items-center justify-between p-6 lg:px-8" aria-label="Global">
                     <div className="flex flex-1">
                         <div className="hidden lg:flex lg:gap-x-12">
                             {navigation.map((item) => (
+                                <a key={item.name} href={item.href} className="text-sm font-semibold leading-6 text-white">
+                                    {item.name}
+                                </a>
+                            ))}
+                            {navigationRight.map((item) => (
                                 <a key={item.name} href={item.href} className="text-sm font-semibold leading-6 text-white">
                                     {item.name}
                                 </a>
@@ -47,12 +52,10 @@ export default function HomeHero() {
                         </div>
                     </div>
 
-                    <div className="hidden lg:flex lg:gap-x-12 justify-end">
-                        {navigationRight.map((item) => (
-                            <a key={item.name} href={item.href} className="text-sm font-semibold leading-6 text-white">
-                                {item.name}
-                            </a>
-                        ))}
+                    <div className="hidden lg:flex lg:gap-x-12">
+                        <div className="h-12 w-12">
+                            <Image src={EdisonaLogoWhite} alt={"Edisona Logo"} />
+                        </div>
                     </div>
                 </nav>
                     <Dialog className="" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
@@ -101,7 +104,7 @@ export default function HomeHero() {
                 <Image
                     src={picture}
                     alt=""
-                    className="absolute inset-0 -z-10 h-full w-full object-cover opacity-60"
+                    className="absolute inset-0 -z-10 h-full w-full object-cover opacity-80"
                 />
                 <div
                     className="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
@@ -115,18 +118,16 @@ export default function HomeHero() {
                         }}
                     />
                 </div>
-                <div className="mx-auto max-w-5xl ">
-                    <div className="w-20 h-20 mx-auto hidden lg:flex">
-                        <a className="" href="/">
-                            <Image src={EdisonaLogoWhite} alt={"Edisona Logo"}  className="object-contain"/>
-                        </a>
-                    </div>
-                    <div className="text-center py-32 xl:py-48 2xl:py-56">
+                <div className=" absolute -z-10 inset-x- transform-gpu w-full h-full bg-gradient-to-t from-0% from-gray-800 to-80% to-transparent"></div>
+
+                <div className="mx-auto max-w-5xl">
+                    <div className="text-center pt-32 pb-12 xl:pt-48 xl:pb-12 2xl:pt-72 2xl:pb-12 ">
+                        <div className="h-32"></div>
                         <h1 className=" text-2xl md:text-4xl font-bold tracking-tight text-white">
                             Škola, kde děti poznávají svět i samy sebe.
                         </h1>
-                        <p className="mt-6 text-lg leading-8 text-gray-300 max-w-2xl mx-auto">
-                            Jsme inovativní škola zaměřená na smysluplné vzdělávání. Klademe důraz na rozvoj celé osobnosti, schopnost sebeuvědomění a sebevyjádření, umění tvořivosti a komunikace na všech úrovních. K nám i rodiče chodí rádi.
+                        <p className="mt-6 text-lg leading-8 text-gray-200 max-w-2xl mx-auto">
+                            Inovativní škola se zaměřením na smysluplné vzdělání a důrazem na rozvoj celé osobnosti - škola, kam i rodiče chodí rádi!
                         </p>
                         <div className="mt-10 flex items-center justify-center gap-x-6">
                             <a
