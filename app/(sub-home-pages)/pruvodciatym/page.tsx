@@ -31,6 +31,7 @@ export interface Person {
     medailon:string;
     roleDisplay:string;
     email:string;
+    testimonial:string;
 }
 export interface PeopleParams {
     people:Person[];
@@ -46,10 +47,11 @@ export default async function PruvodciATymPage(){
             surname: item.Prijimeni,
             title: item.Titul,
             role: item.Role,
-            picture: `https://pocketbase-production-ab0e.up.railway.app/api/files/ud6h7cjexscwd4z/${item.id}/${item.fotka}`,
+            picture: item.fotka ? `https://pocketbase-production-ab0e.up.railway.app/api/files/ud6h7cjexscwd4z/${item.id}/${item.fotka}` : "",
             medailon:item.Medailon,
             roleDisplay:item.Role_display,
             email:item.email,
+            testimonial:item.Testimonial
         }))
     };
     return(

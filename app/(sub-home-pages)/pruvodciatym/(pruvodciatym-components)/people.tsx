@@ -33,6 +33,7 @@ export default function People({people}:{people:PeopleParams}) {
             medailon:item.medailon,
             roleDisplay:item.roleDisplay,
             email:item.email,
+            testimonial:item.testimonial
 
         }));
     const Pruvodci = people.people
@@ -45,7 +46,9 @@ export default function People({people}:{people:PeopleParams}) {
             picture: item.picture,
             medailon:item.medailon,
             email:item.email,
-            roleDisplay:item.roleDisplay
+            roleDisplay:item.roleDisplay,
+            testimonial:item.testimonial
+
         }));
     const UciteleJazyku = people.people
         .filter((item:Person) => item.role.includes("Ucitel_jazyku"))
@@ -57,6 +60,7 @@ export default function People({people}:{people:PeopleParams}) {
             picture: item.picture,
             medailon:item.medailon,
             email:item.email,
+            testimonial:item.testimonial,
 
             roleDisplay:item.roleDisplay
         }));
@@ -70,6 +74,7 @@ export default function People({people}:{people:PeopleParams}) {
             picture: item.picture,
             medailon:item.medailon,
             email:item.email,
+            testimonial:item.testimonial,
             roleDisplay:item.roleDisplay
         }));
     const Krouzky = people.people
@@ -82,6 +87,7 @@ export default function People({people}:{people:PeopleParams}) {
             picture: item.picture,
             medailon:item.medailon,
             email:item.email,
+            testimonial:item.testimonial,
             roleDisplay:item.roleDisplay
         }));
     const Provoznitym = people.people
@@ -94,6 +100,7 @@ export default function People({people}:{people:PeopleParams}) {
             picture: item.picture,
             medailon:item.medailon,
             email:item.email,
+            testimonial:item.testimonial,
             roleDisplay:item.roleDisplay
         }));
     console.log(SkolniDruzina)
@@ -178,10 +185,13 @@ export default function People({people}:{people:PeopleParams}) {
                             people.people.map((person:Person,key) => (
                         <li key={key}>
                             <button onClick={()=>selectPerson(person)}>
-                                <img className="mx-auto h-24 w-24 rounded-full" src={person.picture} alt="" />
+                                {person.picture === "" ?
+                                    <div className="w-24 h-24 rounded-full bg-[#ECDDE2]"></div>
+                                    :
+                                    <img className="mx-auto h-24 w-24 rounded-full object-cover" src={person.picture} alt="" />
+                                }
                             </button>
                             <h3 className="mt-6 text-base font-semibold leading-7 tracking-tight text-gray-900">{person.title} {person.name} {person.surname}</h3>
-
                             <p className="text-sm leading-6 text-gray-600">{person.roleDisplay}</p>
                         </li>
                     ))
@@ -189,7 +199,11 @@ export default function People({people}:{people:PeopleParams}) {
                                 Zakladatele.map((person:Person,key) => (
                                     <li key={key}>
                                         <button onClick={()=>selectPerson(person)}>
-                                            <img className="mx-auto h-24 w-24 rounded-full" src={person.picture} alt="" />
+                                            {person.picture === "" ?
+                                                <div className="w-24 h-24 rounded-full bg-[#ECDDE2]"></div>
+                                                :
+                                                <img className="mx-auto h-24 w-24 rounded-full object-cover" src={person.picture} alt="" />
+                                            }
                                         </button>
                                         <h3 className="mt-6 text-base font-semibold leading-7 tracking-tight text-gray-900">{person.title} {person.name} {person.surname}</h3>
                                         <p className="text-sm leading-6 text-gray-600">{person.roleDisplay}</p>
@@ -199,7 +213,11 @@ export default function People({people}:{people:PeopleParams}) {
                                 Pruvodci.map((person:Person,key) => (
                                     <li key={key}>
                                         <button onClick={()=>selectPerson(person)}>
-                                            <img className="mx-auto h-24 w-24 rounded-full" src={person.picture} alt="" />
+                                            {person.picture === "" ?
+                                                <div className="w-24 h-24 rounded-full bg-[#ECDDE2]"></div>
+                                                :
+                                                <img className="mx-auto h-24 w-24 rounded-full object-cover" src={person.picture} alt="" />
+                                            }
                                         </button>
                                         <h3 className="mt-6 text-base font-semibold leading-7 tracking-tight text-gray-900">{person.title} {person.name} {person.surname}</h3>
 
@@ -210,7 +228,11 @@ export default function People({people}:{people:PeopleParams}) {
                                     UciteleJazyku.map((person:Person,key) => (
                                         <li key={key}>
                                             <button onClick={()=>selectPerson(person)}>
-                                                <img className="mx-auto h-24 w-24 rounded-full" src={person.picture} alt="" />
+                                                {person.picture === "" ?
+                                                    <div className="w-24 h-24 rounded-full bg-[#ECDDE2]"></div>
+                                                    :
+                                                    <img className="mx-auto h-24 w-24 rounded-full object-cover" src={person.picture} alt="" />
+                                                }
                                             </button>
                                             <h3 className="mt-6 text-base font-semibold leading-7 tracking-tight text-gray-900">{person.title} {person.name} {person.surname}</h3>
 
@@ -221,7 +243,11 @@ export default function People({people}:{people:PeopleParams}) {
                                         SkolniDruzina.map((person:Person,key) => (
                                             <li key={key}>
                                                 <button onClick={()=>selectPerson(person)}>
-                                                    <img className="mx-auto h-24 w-24 rounded-full" src={person.picture} alt="" />
+                                                    {person.picture === "" ?
+                                                        <div className="w-24 h-24 rounded-full bg-[#ECDDE2]"></div>
+                                                        :
+                                                        <img className="mx-auto h-24 w-24 rounded-full object-cover" src={person.picture} alt="" />
+                                                    }
                                                 </button>
                                                 <h3 className="mt-6 text-base font-semibold leading-7 tracking-tight text-gray-900">{person.title} {person.name} {person.surname}</h3>
 
@@ -231,7 +257,11 @@ export default function People({people}:{people:PeopleParams}) {
                                                 Krouzky.map((person:Person,key) => (
                                                     <li key={key}>
                                                         <button onClick={()=>selectPerson(person)}>
-                                                            <img className="mx-auto h-24 w-24 rounded-full" src={person.picture} alt="" />
+                                                            {person.picture === "" ?
+                                                                <div className="w-24 h-24 rounded-full bg-[#ECDDE2]"></div>
+                                                                :
+                                                                <img className="mx-auto h-24 w-24 rounded-full object-cover" src={person.picture} alt="" />
+                                                            }
                                                         </button>
                                                         <h3 className="mt-6 text-base font-semibold leading-7 tracking-tight text-gray-900">{person.title} {person.name} {person.surname}</h3>
 
@@ -241,7 +271,11 @@ export default function People({people}:{people:PeopleParams}) {
                                                     Provoznitym.map((person:Person,key) => (
                                                         <li key={key}>
                                                             <button onClick={()=>selectPerson(person)}>
-                                                                <img className="mx-auto h-24 w-24 rounded-full" src={person.picture} alt="" />
+                                                                {person.picture === "" ?
+                                                                    <div className="w-24 h-24 rounded-full bg-[#ECDDE2]"></div>
+                                                                    :
+                                                                    <img className="mx-auto h-24 w-24 rounded-full object-cover" src={person.picture} alt="" />
+                                                                }
                                                             </button>
                                                             <h3 className="mt-6 text-base font-semibold leading-7 tracking-tight text-gray-900">{person.title} {person.name} {person.surname}</h3>
 
@@ -280,7 +314,11 @@ export default function People({people}:{people:PeopleParams}) {
                                     <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-sm sm:p-6">
                                         <div>
                                             <div className="mx-auto flex  items-center justify-center rounded-full ">
-                                                <img className="mx-auto h-24 w-24 rounded-full object-cover overflow-hidden" src={selectedPerson?.picture} alt="" />
+                                                {selectedPerson?.picture === "" ?
+                                                    <div className="w-24 h-24 rounded-full bg-[#ECDDE2]"></div>
+                                                    :
+                                                    <img className="mx-auto h-24 w-24 rounded-full object-cover" src={selectedPerson?.picture} alt="" />
+                                                }
                                             </div>
                                             <div className="mt-3 text-center sm:mt-5">
                                                 <Dialog.Title as="h3" className="text-base font-semibold leading-6 text-gray-900">
@@ -309,6 +347,15 @@ export default function People({people}:{people:PeopleParams}) {
                                                 <div className="mt-2">
                                                     <p className="text-sm text-gray-500">
                                                         {selectedPerson?.email}
+                                                    </p>
+                                                </div>
+                                                <div className="mt-2">
+                                                    <p className="text-sm text-gray-700 italic">
+                                                        {selectedPerson?.testimonial?
+                                                            <span>,,{selectedPerson?.testimonial}''</span>:
+                                                            <span></span>
+
+                                                        }
                                                     </p>
                                                 </div>
                                             </div>
