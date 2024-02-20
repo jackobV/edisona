@@ -42,7 +42,7 @@ export default function SpolupraceSRodiciFeatures(){
         {
             image: kurzy,
             title: "Vzdělávací kurzy pro dospělé",
-            text: "Dobrovolnická činnost dle potřeb Edisony, např. montování nábytku společně s dětmi, či společné vaření"
+            text: "Aktuální témata z oblasti výchovy dětí: např. nenásilná komunikace, děti v online světě a role rodičů, homeopatie, film Moudrost traumatu a jiné."
         },
         {
             image: dobrovolnictvi,

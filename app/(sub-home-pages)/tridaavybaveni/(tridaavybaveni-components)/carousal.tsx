@@ -38,7 +38,6 @@ export default function TridaAVybaveniCarousal(){
                             <div className="relative flex flex-row items-center">
                                 <div className="absolute z-20 pl-5">
                                     <button className="w-10 h-10 rounded-full bg-white text-2xl" onClick={scrollPrev}>
-                                        {"<"}
                                     </button>
                                 </div>
                                 <Image src={prvnitrojroci} alt={"carousal one"} className="rounded-b-xl drop-shadow-md object-cover" />
@@ -187,9 +186,7 @@ export default function TridaAVybaveniCarousal(){
                                 </div>
                                 <Image src={studovna} alt={"carousal one"} className="rounded-b-xl drop-shadow-md object-cover" />
                                 <div className="z-10 absolute w-full flex flex-col items-end pr-5">
-                                    <button className="w-10 h-10 rounded-full bg-white text-2xl" onClick={scrollNext}>
-                                        {">"}
-                                    </button>
+
                                 </div>
                             </div>
                             <div className="flex flex-col md:flex-row px-4 md:px-10 py-4 md:py-7 gap-x-5 md:items-center">
